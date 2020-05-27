@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PlayersToolkitFor13thAge
+namespace ToolkitLibrary
 {
     public class CharacterModel
     {
