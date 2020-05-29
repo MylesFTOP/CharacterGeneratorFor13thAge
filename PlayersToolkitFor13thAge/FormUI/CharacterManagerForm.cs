@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FormUI
 {
-    public partial class UserDashboard : Form
+    public partial class CharacterManagerForm : Form
     {
-        public UserDashboard() {
+        public CharacterManagerForm() {
             InitializeComponent();
         }
     }

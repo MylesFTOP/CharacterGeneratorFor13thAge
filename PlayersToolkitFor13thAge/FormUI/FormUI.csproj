@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UserDashboard.cs">
+    <Compile Include="CharacterManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserDashboard.Designer.cs">
-      <DependentUpon>UserDashboard.cs</DependentUpon>
+    <Compile Include="CharacterManagerForm.Designer.cs">
+      <DependentUpon>CharacterManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,9 +63,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserDashboard.resx">
-      <DependentUpon>UserDashboard.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
