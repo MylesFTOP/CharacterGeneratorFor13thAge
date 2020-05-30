@@ -11,7 +11,7 @@ namespace ToolkitLibrary
         public UserModel Player { get; set; } = new UserModel();
         public string CharacterRace { get; set; }
         public string CharacterClass { get; set; }
-        public List<int> AbilityStats { get; set; }
+        public List<AbilityStat> AbilityStats { get; set; } = new List<AbilityStat>();
         public List<int> Attributes { get; set; }
         public List<string> IconRelationships { get; set; }
         public List<string> Backgrounds { get; set; }
