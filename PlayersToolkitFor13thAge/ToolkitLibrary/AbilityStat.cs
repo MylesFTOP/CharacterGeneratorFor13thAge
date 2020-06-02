@@ -10,7 +10,7 @@ namespace ToolkitLibrary
         public int CalculateModifier(uint abilityStat) {
             double abilityStatAsDouble = abilityStat;
             double modifierCalc = Math.Floor((abilityStatAsDouble - 10) / 2);
-            int modifier = int.TryParse($"{modifierCalc}", out modifier);
+            int modifier = int.Parse($"{modifierCalc}");
             return modifier;
         }
 
