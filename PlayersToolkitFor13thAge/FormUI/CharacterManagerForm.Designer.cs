@@ -72,7 +72,6 @@
             this.headerLabel.Size = new System.Drawing.Size(466, 50);
             this.headerLabel.TabIndex = 0;
             this.headerLabel.Text = "13th Age Character Manager";
-            this.headerLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // characterNameLabel
             // 
@@ -82,7 +81,6 @@
             this.characterNameLabel.Size = new System.Drawing.Size(107, 30);
             this.characterNameLabel.TabIndex = 1;
             this.characterNameLabel.Text = "Character:";
-            this.characterNameLabel.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // characterName
             // 
@@ -101,7 +99,6 @@
             this.characterRace.Size = new System.Drawing.Size(88, 30);
             this.characterRace.TabIndex = 4;
             this.characterRace.Text = "<none>";
-            this.characterRace.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // characterRaceLabel
             // 
@@ -111,7 +108,6 @@
             this.characterRaceLabel.Size = new System.Drawing.Size(63, 30);
             this.characterRaceLabel.TabIndex = 3;
             this.characterRaceLabel.Text = "Race:";
-            this.characterRaceLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // characterClass
             // 
@@ -182,6 +178,7 @@
             this.strengthInputBox.Name = "strengthInputBox";
             this.strengthInputBox.Size = new System.Drawing.Size(43, 35);
             this.strengthInputBox.TabIndex = 12;
+            this.strengthInputBox.TextChanged += new System.EventHandler(this.strengthInputBox_TextChanged);
             // 
             // constitutionInputBox
             // 
@@ -226,7 +223,6 @@
             this.charismaLabel.Size = new System.Drawing.Size(55, 30);
             this.charismaLabel.TabIndex = 18;
             this.charismaLabel.Text = "CHA";
-            this.charismaLabel.Click += new System.EventHandler(this.label1_Click_3);
             // 
             // intelligenceLabel
             // 
@@ -254,7 +250,6 @@
             this.modifiersLabel.Size = new System.Drawing.Size(61, 30);
             this.modifiersLabel.TabIndex = 21;
             this.modifiersLabel.Text = "Mod:";
-            this.modifiersLabel.Click += new System.EventHandler(this.label4_Click);
             // 
             // modifiersWithLevelLabel
             // 
@@ -282,7 +277,6 @@
             this.strengthModifierWithLevel.Size = new System.Drawing.Size(52, 30);
             this.strengthModifierWithLevel.TabIndex = 24;
             this.strengthModifierWithLevel.Text = "<0>";
-            this.strengthModifierWithLevel.Click += new System.EventHandler(this.label5_Click);
             // 
             // constitutionModifierWithLevel
             // 
@@ -355,7 +349,6 @@
             this.wisdomModifier.Size = new System.Drawing.Size(52, 30);
             this.wisdomModifier.TabIndex = 31;
             this.wisdomModifier.Text = "<0>";
-            this.wisdomModifier.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // label1
             // 
