@@ -89,7 +89,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ToolkitLibrary.New\ToolkitLibrary.csproj">
+    <ProjectReference Include="..\ToolkitLibrary\ToolkitLibrary.csproj">
       <Project>{e6d16b4e-1e86-4578-b68b-98bcb34ddb2f}</Project>
       <Name>ToolkitLibrary</Name>
     </ProjectReference>
