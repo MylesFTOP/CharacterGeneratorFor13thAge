@@ -60,16 +60,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ToolkitLibrary\ToolkitLibrary.csproj">
-      <Project>{20486049-6e5f-4b0c-8d1a-3c8c12e34b64}</Project>
-      <Name>ToolkitLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ToolkitLibrary.New\ToolkitLibrary.csproj">
+      <Project>{e6d16b4e-1e86-4578-b68b-98bcb34ddb2f}</Project>
+      <Name>ToolkitLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
