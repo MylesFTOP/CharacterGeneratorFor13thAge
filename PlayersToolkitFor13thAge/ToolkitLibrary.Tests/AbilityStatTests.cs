@@ -18,5 +18,12 @@ namespace ToolkitLibrary.Tests
             int actualValue = abilityStat.CalculateModifier(12);
             Assert.Equal(expectedValue, actualValue);
         }
+
+        [Fact]
+        public void AbilityStat_ModifierWithLevelShouldCalculate() {
+            int expectedValue = 2;
+            int actualValue = abilityStat.CalculateModifierWithLevel(12, 1);
+            Assert.Equal(expectedValue, actualValue);
+        }
     }
 }
