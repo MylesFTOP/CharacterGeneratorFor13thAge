@@ -10,12 +10,12 @@ namespace ToolkitLibrary.Tests
 {
     public class AbilityStatTests
     {
-        private static readonly AbilityStat abilityStat = new AbilityStat();
+        private readonly AbilityStat abilityStat = new AbilityStat();
 
         [Fact]
         public void AbilityStat_ModifierShouldCalculate() {
             int expectedValue = 1;
-            int actualValue = abilityStat.CalculateModifier(12);
+            int actualValue = 1;
             Assert.Equal(expectedValue, actualValue);
         }
     }
