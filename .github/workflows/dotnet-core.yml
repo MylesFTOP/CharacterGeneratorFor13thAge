@@ -15,9 +15,7 @@ jobs:
         dotnet-version: 3.1.101
     - name: Clean files before build
       run: dotnet clean ./PlayersToolkitFor13thAge
-    - name: Install dependencies
-      run: dotnet restore ./PlayersToolkitFor13thAge
     - name: Build
-      run: dotnet build ./PlayersToolkitFor13thAge --configuration Release --no-restore
+      run: dotnet build ./PlayersToolkitFor13thAge --configuration Release
     - name: Test
       run: dotnet test ./PlayersToolkitFor13thAge --no-restore --verbosity normal
