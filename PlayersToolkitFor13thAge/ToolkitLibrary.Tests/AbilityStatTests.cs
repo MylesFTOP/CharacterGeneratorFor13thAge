@@ -15,7 +15,7 @@ namespace ToolkitLibrary.Tests
         [Fact]
         public void AbilityStat_ModifierShouldCalculate() {
             int expectedValue = 1;
-            int actualValue = 1;
+            int actualValue = abilityStat.CalculateModifier(12);
             Assert.Equal(expectedValue, actualValue);
         }
     }
