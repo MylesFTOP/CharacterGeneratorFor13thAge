@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ToolkitLibrary;
 
 namespace FormUI
 {
@@ -21,7 +22,8 @@ namespace FormUI
         }
 
         private void strengthInputBox_TextChanged(object sender, EventArgs e) {
-
+            AbilityStat abilityStat = new AbilityStat();
+            strengthModifier.Text = AbilityStat.CalculateModifier(Int32.Parse(strengthInputBox.Text));
         }
 
         private bool ValidateInput() {
@@ -38,6 +40,10 @@ namespace FormUI
             }
 
             return output;
+        }
+
+        private void strengthModifier_Click(object sender, EventArgs e) {
+
         }
     }
 }

@@ -12,10 +12,11 @@ namespace ToolkitLibrary.Tests
     {
         private readonly AbilityStat abilityStat = new AbilityStat();
 
-        [Fact]
-        public void AbilityStat_ModifierShouldCalculate() {
-            int expectedValue = 1;
-            int actualValue = abilityStat.CalculateModifier(12);
+        [Theory]
+        [InlineData(1, 13)]
+        [InlineData(-1, 9)]
+        public void AbilityStat_ModifierShouldCalculate(int expectedValue, int stat) {
+            int actualValue = abilityStat.CalculateModifier(stat);
             Assert.Equal(expectedValue, actualValue);
         }
 

@@ -6,6 +6,10 @@ namespace ToolkitLibrary
 {
     public class AbilityStat
     {
+        public int abilityStat { get; set; }
+        public int modifier { get; private set; }
+        public int modifierWithLevel { get; private set; }
+
         public int CalculateModifier(int abilityStat) {
             double modifier = Math.Floor(((double)abilityStat - 10) / 2);
             return (int)modifier;

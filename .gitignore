@@ -186,7 +186,7 @@ PublishScripts/
 *.nupkg
 # NuGet Symbol Packages
 *.snupkg
-# The packages folder can be ignored because of Package Restore
+# The packages folder can be ignored because of Package Restore, but has been added to fix .NET Framework errors from package references in project files
 !*/[Pp]ackages/*
 # except build/, which is used as an MSBuild target.
 !**/[Pp]ackages/build/
