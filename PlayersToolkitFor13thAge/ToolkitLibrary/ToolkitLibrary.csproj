@@ -43,16 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbilityStat.cs" />
-    <Compile Include="CombatStat.cs" />
-    <Compile Include="CampaignModel.cs" />
-    <Compile Include="CharacterModel.cs" />
+    <Compile Include="Models\AbilityStat.cs" />
+    <Compile Include="Models\CombatStat.cs" />
+    <Compile Include="Models\CampaignModel.cs" />
+    <Compile Include="Models\CharacterModel.cs" />
     <Compile Include="GlobalConfig.cs" />
-    <Compile Include="IDataConnection.cs" />
+    <Compile Include="DataAccess\IDataConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQLConnector.cs" />
-    <Compile Include="TextConnector.cs" />
-    <Compile Include="UserModel.cs" />
+    <Compile Include="DataAccess\SQLConnector.cs" />
+    <Compile Include="DataAccess\TextConnector.cs" />
+    <Compile Include="Models\UserModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
