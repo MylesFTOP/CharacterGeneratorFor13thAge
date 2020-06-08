@@ -8,7 +8,7 @@ namespace ToolkitLibrary
 {
     public class CombatStat
     {
-        public int combatStat { get; private set; }
+        public int CombatStatValue { get; private set; }
 
         // public static int CalculateArmorClass(CharacterModel character) {
         //     // TODO : Add lookup for base value from character class to then pass to argument

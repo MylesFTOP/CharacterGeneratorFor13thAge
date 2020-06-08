@@ -17,7 +17,12 @@ namespace ToolkitLibrary
         public AbilityStat Wisdom { get; set; } = new AbilityStat();
         public AbilityStat Intellect { get; set; } = new AbilityStat();
         public AbilityStat Charisma { get; set; } = new AbilityStat();
-        public CombatStat armorClass { get; set; } = new CombatStat();
+        public CombatStat ArmorClass { get; private set; } = new CombatStat();
+        public CombatStat PhysicalDefense { get; private set; } = new CombatStat();
+        public CombatStat MentalDefense { get; private set; } = new CombatStat();
+        public int HitPoints { get; private set; }
+        public int Recoveries { get; private set; }
+        public string RecoveryDice { get; private set; }
         public List<string> IconRelationships { get; set; }
         public List<Array> Backgrounds { get; set; }
         public List<string> Feats { get; set; }

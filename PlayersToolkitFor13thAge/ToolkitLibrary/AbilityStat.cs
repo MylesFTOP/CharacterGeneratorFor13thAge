@@ -6,11 +6,11 @@ namespace ToolkitLibrary
 {
     public class AbilityStat
     {
-        public int abilityStat { get; set; }
+        public int AbilityStatValue { get; set; }
 
-        public string abilityStatName { get; private set; }
-        public int modifier { get; private set; }
-        public int modifierWithLevel { get; private set; }
+        public string AbilityStatName { get; private set; }
+        public int Modifier { get; private set; }
+        public int ModifierWithLevel { get; private set; }
 
         public int CalculateModifier(int abilityStat) {
             double modifier = Math.Floor(((double)abilityStat - 10) / 2);
