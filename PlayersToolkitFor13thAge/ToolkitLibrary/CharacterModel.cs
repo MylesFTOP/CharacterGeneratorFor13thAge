@@ -11,10 +11,15 @@ namespace ToolkitLibrary
         public UserModel Player { get; set; } = new UserModel();
         public string CharacterRace { get; set; }
         public string CharacterClass { get; set; }
-        public List<AbilityStat> AbilityStats { get; set; } = new List<AbilityStat>();
-        public List<int> Attributes { get; set; }
+        public AbilityStat Strength { get; set; } = new AbilityStat();
+        public AbilityStat Constitution { get; set; } = new AbilityStat();
+        public AbilityStat Dexterity { get; set; } = new AbilityStat();
+        public AbilityStat Wisdom { get; set; } = new AbilityStat();
+        public AbilityStat Intellect { get; set; } = new AbilityStat();
+        public AbilityStat Charisma { get; set; } = new AbilityStat();
+        public CombatStat armorClass { get; set; } = new CombatStat();
         public List<string> IconRelationships { get; set; }
-        public List<string> Backgrounds { get; set; }
+        public List<Array> Backgrounds { get; set; }
         public List<string> Feats { get; set; }
         public List<string> Talents { get; set; }
         public List<string> Skills { get; set; }

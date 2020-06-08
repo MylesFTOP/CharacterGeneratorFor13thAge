@@ -7,6 +7,8 @@ namespace ToolkitLibrary
     public class AbilityStat
     {
         public int abilityStat { get; set; }
+
+        public string abilityStatName { get; private set; }
         public int modifier { get; private set; }
         public int modifierWithLevel { get; private set; }
 

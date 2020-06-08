@@ -22,8 +22,8 @@ namespace FormUI
         }
 
         private void strengthInputBox_TextChanged(object sender, EventArgs e) {
-            AbilityStat abilityStat = new AbilityStat();
-            strengthModifier.Text = AbilityStat.CalculateModifier(Int32.Parse(strengthInputBox.Text));
+            // AbilityStat abilityStat = new AbilityStat();
+            // strengthModifier.Text = AbilityStat.CalculateModifier(Int32.Parse(strengthInputBox.Text));
         }
 
         private bool ValidateInput() {
