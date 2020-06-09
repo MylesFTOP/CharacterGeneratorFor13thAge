@@ -46,15 +46,26 @@ namespace FormUI
             inputValues.Add(intelligenceValue);
             inputValues.Add(charismaValue);
 
+            foreach ( var textBox in textBoxes )
+            {
+
+            }
+
             if ( !uint.TryParse(strengthInputBox.Text, out strengthValue) ) {
                 output = false;
             }
-            if ( strengthValue < 1 ) {
-                output = false;
-            }
+
             foreach ( var textBox in textBoxes )
             {
                 if ( textBox.TextLength == 0 )
+                {
+                    output = false;
+                }
+            }
+
+            foreach ( var inputValue in inputValues )
+            {
+                if ( inputValue < 1 )
                 {
                     output = false;
                 }
