@@ -47,5 +47,17 @@ namespace FormUI
         private void strengthModifier_Click(object sender, EventArgs e) {
 
         }
+
+        private void saveCharacter_Click(object sender, EventArgs e) {
+            if ( ValidateInput() )
+            {
+                CharacterModel model = new CharacterModel();
+
+            }
+            else
+            {
+                MessageBox.Show("Data missing or incorrect. Please check and try again.");
+            }
+        }
     }
 }

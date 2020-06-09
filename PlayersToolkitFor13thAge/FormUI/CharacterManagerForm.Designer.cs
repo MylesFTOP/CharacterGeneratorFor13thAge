@@ -28,12 +28,8 @@
         private void InitializeComponent() {
             this.headerLabel = new System.Windows.Forms.Label();
             this.characterNameLabel = new System.Windows.Forms.Label();
-            this.characterName = new System.Windows.Forms.Label();
-            this.characterRace = new System.Windows.Forms.Label();
             this.characterRaceLabel = new System.Windows.Forms.Label();
-            this.characterClass = new System.Windows.Forms.Label();
             this.characterClassLabel = new System.Windows.Forms.Label();
-            this.characterLevel = new System.Windows.Forms.Label();
             this.characterLevelLabel = new System.Windows.Forms.Label();
             this.strengthLabel = new System.Windows.Forms.Label();
             this.constitutionLabel = new System.Windows.Forms.Label();
@@ -59,8 +55,13 @@
             this.intelligenceModifier = new System.Windows.Forms.Label();
             this.wisdomModifierWithLevel = new System.Windows.Forms.Label();
             this.wisdomModifier = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.charismaModifierWithLevel = new System.Windows.Forms.Label();
+            this.charismaModifier = new System.Windows.Forms.Label();
+            this.characterName = new System.Windows.Forms.TextBox();
+            this.characterClass = new System.Windows.Forms.TextBox();
+            this.characterRace = new System.Windows.Forms.TextBox();
+            this.characterLevel = new System.Windows.Forms.TextBox();
+            this.saveCharacter = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // headerLabel
@@ -82,24 +83,6 @@
             this.characterNameLabel.TabIndex = 1;
             this.characterNameLabel.Text = "Character:";
             // 
-            // characterName
-            // 
-            this.characterName.AutoSize = true;
-            this.characterName.Location = new System.Drawing.Point(626, 13);
-            this.characterName.Name = "characterName";
-            this.characterName.Size = new System.Drawing.Size(88, 30);
-            this.characterName.TabIndex = 2;
-            this.characterName.Text = "<none>";
-            // 
-            // characterRace
-            // 
-            this.characterRace.AutoSize = true;
-            this.characterRace.Location = new System.Drawing.Point(945, 13);
-            this.characterRace.Name = "characterRace";
-            this.characterRace.Size = new System.Drawing.Size(88, 30);
-            this.characterRace.TabIndex = 4;
-            this.characterRace.Text = "<none>";
-            // 
             // characterRaceLabel
             // 
             this.characterRaceLabel.AutoSize = true;
@@ -109,15 +92,6 @@
             this.characterRaceLabel.TabIndex = 3;
             this.characterRaceLabel.Text = "Race:";
             // 
-            // characterClass
-            // 
-            this.characterClass.AutoSize = true;
-            this.characterClass.Location = new System.Drawing.Point(626, 56);
-            this.characterClass.Name = "characterClass";
-            this.characterClass.Size = new System.Drawing.Size(88, 30);
-            this.characterClass.TabIndex = 6;
-            this.characterClass.Text = "<none>";
-            // 
             // characterClassLabel
             // 
             this.characterClassLabel.AutoSize = true;
@@ -126,15 +100,6 @@
             this.characterClassLabel.Size = new System.Drawing.Size(65, 30);
             this.characterClassLabel.TabIndex = 5;
             this.characterClassLabel.Text = "Class:";
-            // 
-            // characterLevel
-            // 
-            this.characterLevel.AutoSize = true;
-            this.characterLevel.Location = new System.Drawing.Point(945, 56);
-            this.characterLevel.Name = "characterLevel";
-            this.characterLevel.Size = new System.Drawing.Size(88, 30);
-            this.characterLevel.TabIndex = 8;
-            this.characterLevel.Text = "<none>";
             // 
             // characterLevelLabel
             // 
@@ -351,32 +316,75 @@
             this.wisdomModifier.TabIndex = 31;
             this.wisdomModifier.Text = "<0>";
             // 
-            // label1
+            // charismaModifierWithLevel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(436, 237);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 30);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "<0>";
+            this.charismaModifierWithLevel.AutoSize = true;
+            this.charismaModifierWithLevel.Location = new System.Drawing.Point(436, 237);
+            this.charismaModifierWithLevel.Name = "charismaModifierWithLevel";
+            this.charismaModifierWithLevel.Size = new System.Drawing.Size(52, 30);
+            this.charismaModifierWithLevel.TabIndex = 34;
+            this.charismaModifierWithLevel.Text = "<0>";
             // 
-            // label2
+            // charismaModifier
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(436, 195);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 30);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "<0>";
+            this.charismaModifier.AutoSize = true;
+            this.charismaModifier.Location = new System.Drawing.Point(436, 195);
+            this.charismaModifier.Name = "charismaModifier";
+            this.charismaModifier.Size = new System.Drawing.Size(52, 30);
+            this.charismaModifier.TabIndex = 33;
+            this.charismaModifier.Text = "<0>";
+            // 
+            // characterName
+            // 
+            this.characterName.Location = new System.Drawing.Point(626, 8);
+            this.characterName.Name = "characterName";
+            this.characterName.Size = new System.Drawing.Size(211, 35);
+            this.characterName.TabIndex = 35;
+            // 
+            // characterClass
+            // 
+            this.characterClass.Location = new System.Drawing.Point(627, 56);
+            this.characterClass.Name = "characterClass";
+            this.characterClass.Size = new System.Drawing.Size(210, 35);
+            this.characterClass.TabIndex = 36;
+            // 
+            // characterRace
+            // 
+            this.characterRace.Location = new System.Drawing.Point(945, 8);
+            this.characterRace.Name = "characterRace";
+            this.characterRace.Size = new System.Drawing.Size(222, 35);
+            this.characterRace.TabIndex = 37;
+            // 
+            // characterLevel
+            // 
+            this.characterLevel.Location = new System.Drawing.Point(945, 56);
+            this.characterLevel.Name = "characterLevel";
+            this.characterLevel.Size = new System.Drawing.Size(222, 35);
+            this.characterLevel.TabIndex = 38;
+            // 
+            // saveCharacter
+            // 
+            this.saveCharacter.Location = new System.Drawing.Point(767, 166);
+            this.saveCharacter.Name = "saveCharacter";
+            this.saveCharacter.Size = new System.Drawing.Size(246, 89);
+            this.saveCharacter.TabIndex = 39;
+            this.saveCharacter.Text = "Save character";
+            this.saveCharacter.UseVisualStyleBackColor = true;
+            this.saveCharacter.Click += new System.EventHandler(this.saveCharacter_Click);
             // 
             // CharacterManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1240, 735);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1179, 392);
+            this.Controls.Add(this.saveCharacter);
+            this.Controls.Add(this.characterLevel);
+            this.Controls.Add(this.characterRace);
+            this.Controls.Add(this.characterClass);
+            this.Controls.Add(this.characterName);
+            this.Controls.Add(this.charismaModifierWithLevel);
+            this.Controls.Add(this.charismaModifier);
             this.Controls.Add(this.wisdomModifierWithLevel);
             this.Controls.Add(this.wisdomModifier);
             this.Controls.Add(this.intelligenceModifierWithLevel);
@@ -401,13 +409,9 @@
             this.Controls.Add(this.wisdomLabel);
             this.Controls.Add(this.constitutionLabel);
             this.Controls.Add(this.strengthLabel);
-            this.Controls.Add(this.characterLevel);
             this.Controls.Add(this.characterLevelLabel);
-            this.Controls.Add(this.characterClass);
             this.Controls.Add(this.characterClassLabel);
-            this.Controls.Add(this.characterRace);
             this.Controls.Add(this.characterRaceLabel);
-            this.Controls.Add(this.characterName);
             this.Controls.Add(this.characterNameLabel);
             this.Controls.Add(this.headerLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -424,12 +428,8 @@
 
         private System.Windows.Forms.Label headerLabel;
         private System.Windows.Forms.Label characterNameLabel;
-        private System.Windows.Forms.Label characterName;
-        private System.Windows.Forms.Label characterRace;
         private System.Windows.Forms.Label characterRaceLabel;
-        private System.Windows.Forms.Label characterClass;
         private System.Windows.Forms.Label characterClassLabel;
-        private System.Windows.Forms.Label characterLevel;
         private System.Windows.Forms.Label characterLevelLabel;
         private System.Windows.Forms.Label strengthLabel;
         private System.Windows.Forms.Label constitutionLabel;
@@ -455,7 +455,12 @@
         private System.Windows.Forms.Label intelligenceModifier;
         private System.Windows.Forms.Label wisdomModifierWithLevel;
         private System.Windows.Forms.Label wisdomModifier;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label charismaModifierWithLevel;
+        private System.Windows.Forms.Label charismaModifier;
+        private System.Windows.Forms.TextBox characterName;
+        private System.Windows.Forms.TextBox characterClass;
+        private System.Windows.Forms.TextBox characterRace;
+        private System.Windows.Forms.TextBox characterLevel;
+        private System.Windows.Forms.Button saveCharacter;
     }
 }
