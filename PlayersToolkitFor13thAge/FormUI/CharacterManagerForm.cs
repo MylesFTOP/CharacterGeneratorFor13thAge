@@ -28,18 +28,42 @@ namespace FormUI
 
         private bool ValidateInput() {
             bool output = true;
-            uint strengthValue = 0;
-            if (!uint.TryParse(strengthInputBox.Text, out strengthValue) ) {
-                output = false;
-            }
-            if (strengthValue < 1) {
-                output = false;
-            }
-            if(strengthInputBox.TextLength == 0) {
-                output = false;
-            }
+            uint strengthValue = 0, constitutionValue = 0, dexterityValue = 0, wisdomValue = 0, intelligenceValue = 0, charismaValue = 0 ;
+            
+            List<TextBox> textBoxes = new List<TextBox>();
+            textBoxes.Add(strengthInputBox);
+            textBoxes.Add(constitutionInputBox);
+            textBoxes.Add(dexterityInputBox);
+            textBoxes.Add(wisdomInputBox);
+            textBoxes.Add(intelligenceInputBox);
+            textBoxes.Add(charismaInputBox);
 
+            List<uint> inputValues = new List<uint>();
+            inputValues.Add(strengthValue);
+            inputValues.Add(constitutionValue);
+            inputValues.Add(dexterityValue);
+            inputValues.Add(wisdomValue);
+            inputValues.Add(intelligenceValue);
+            inputValues.Add(charismaValue);
 
+            if ( !uint.TryParse(strengthInputBox.Text, out strengthValue) ) {
+                output = false;
+            }
+            if ( strengthValue < 1 ) {
+                output = false;
+            }
+            foreach ( var textBox in textBoxes )
+            {
+                if ( textBox.TextLength == 0 )
+                {
+                    output = false;
+                }
+            }
+            
+
+            if ( characterName is null || characterClass is null || characterRace is null || characterLevel is null ) {
+                output = false;
+            }
 
             return output;
         }
@@ -52,7 +76,6 @@ namespace FormUI
             if ( ValidateInput() )
             {
                 CharacterModel model = new CharacterModel();
-
             }
             else
             {
