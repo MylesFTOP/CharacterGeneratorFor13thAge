@@ -14,7 +14,12 @@ namespace ToolkitLibrary
             List<CharacterModel> characters = CharactersFile.FullFilePath().LoadFile().ConvertToCharacterModels();
 
             // Find max ID
-            int currentId = characters.OrderByDescending(x => x.CharacterID).First().CharacterID + 1;
+            int currentId = 1;
+
+            if ( characters.Count > 0 )
+            {
+                currentId = characters.OrderByDescending(x => x.CharacterID).First().CharacterID + 1;
+            }
             model.CharacterID = currentId;
 
             // Add the new record with the new ID (max + 1)
