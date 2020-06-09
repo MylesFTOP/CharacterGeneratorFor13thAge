@@ -42,7 +42,7 @@ namespace ToolkitLibrary.DataAccess.TextHelpers
                 c.Wisdom = int.Parse(cols[8]);
                 c.Intellect = int.Parse(cols[9]);
                 c.Charisma = int.Parse(cols[10]);
-                output.Add(c)
+                output.Add(c);
             }
             return output;
         }
