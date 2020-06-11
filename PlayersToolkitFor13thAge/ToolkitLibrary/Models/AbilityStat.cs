@@ -8,7 +8,7 @@ namespace ToolkitLibrary
     {
         public uint AbilityStatValue { get; set; }
 
-        public string AbilityStatName { get; private set; }
+        public AbilityStatType AbilityStatName { get; private set; }
         public int Modifier { get; private set; }
         public int ModifierWithLevel { get; private set; }
 
@@ -32,6 +32,16 @@ namespace ToolkitLibrary
 
         public AbilityStat(string inputValue) {
             AbilityStatValue = uint.Parse(inputValue);
+        }
+
+        public enum AbilityStatType
+        {
+            strength,
+            constitution,
+            dexterity,
+            wisdom,
+            intelligence,
+            charisma,
         }
     }
 }

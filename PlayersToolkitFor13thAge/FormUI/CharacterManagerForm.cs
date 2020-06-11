@@ -22,8 +22,18 @@ namespace FormUI
         }
 
         private void strengthInputBox_TextChanged(object sender, EventArgs e) {
-            // AbilityStat abilityStat = new AbilityStat();
-            // strengthModifier.Text = AbilityStat.CalculateModifier(Int32.Parse(strengthInputBox.Text));
+            UpdateModifiers(strengthInputBox);
+        }
+
+        private void UpdateModifiers(TextBox textBox) {
+            AbilityStat abilityStat = new AbilityStat();
+            int level = int.Parse(characterLevel.Text);
+            strengthModifier.Text = abilityStat
+                .CalculateModifier(uint.Parse(textBox.Text))
+                .ToString();
+            strengthModifierWithLevel.Text = abilityStat
+                .CalculateModifierWithLevel(uint.Parse(textBox.Text), level)
+                .ToString();
         }
 
         private bool ValidateInput() {
@@ -70,8 +80,8 @@ namespace FormUI
                 }
             }
             
-
-            if ( characterName is null || characterClass is null || characterRace is null || characterLevel is null ) {
+            if ( characterName.TextLength == 0 || characterClass.TextLength == 0 || characterRace.TextLength == 0 || characterLevel.TextLength == 0 ) {
+                bool length = true;
                 output = false;
             }
 
