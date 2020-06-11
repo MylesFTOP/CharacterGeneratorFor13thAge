@@ -22,18 +22,39 @@ namespace FormUI
         }
 
         private void strengthInputBox_TextChanged(object sender, EventArgs e) {
-            UpdateModifiers(strengthInputBox);
+            UpdateModifiers(strengthInputBox, strengthModifier, strengthModifierWithLevel);
         }
 
-        private void UpdateModifiers(TextBox textBox) {
+        private void constitutionInputBox_TextChanged(object sender, EventArgs e) {
+            UpdateModifiers(constitutionInputBox, constitutionModifier, constitutionModifierWithLevel);
+        }
+
+        private void dexterityInputBox_TextChanged(object sender, EventArgs e) {
+            UpdateModifiers(dexterityInputBox, dexterityModifier, dexterityModifierWithLevel);
+        }
+
+        private void intelligenceInputBox_TextChanged(object sender, EventArgs e) {
+            UpdateModifiers(intelligenceInputBox, intelligenceModifier, intelligenceModifierWithLevel);
+        }
+
+        private void wisdomInputBox_TextChanged(object sender, EventArgs e) {
+            UpdateModifiers(wisdomInputBox, wisdomModifier, wisdomModifierWithLevel);
+        }
+
+        private void charismaInputBox_TextChanged(object sender, EventArgs e) {
+            UpdateModifiers(charismaInputBox, charismaModifier, charismaModifierWithLevel);
+        }
+
+        private void UpdateModifiers(TextBox textBox, Label modifier, Label modifierWithLevel) {
             AbilityStat abilityStat = new AbilityStat();
-            int level = int.Parse(characterLevel.Text);
-            strengthModifier.Text = abilityStat
-                .CalculateModifier(uint.Parse(textBox.Text))
-                .ToString();
-            strengthModifierWithLevel.Text = abilityStat
-                .CalculateModifierWithLevel(uint.Parse(textBox.Text), level)
-                .ToString();
+            int level = int.Parse(characterLevel.Text) + 0;
+            string displayFormat = "+0;-0";
+            modifier.Text = abilityStat
+                .CalculateModifier(uint.Parse(textBox.Text) + 0)
+                .ToString(displayFormat);
+            modifierWithLevel.Text = abilityStat
+                .CalculateModifierWithLevel(uint.Parse(textBox.Text) + 0, level)
+                .ToString(displayFormat);
         }
 
         private bool ValidateInput() {

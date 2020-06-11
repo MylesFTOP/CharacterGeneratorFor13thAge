@@ -151,6 +151,7 @@
             this.constitutionInputBox.Name = "constitutionInputBox";
             this.constitutionInputBox.Size = new System.Drawing.Size(43, 35);
             this.constitutionInputBox.TabIndex = 13;
+            this.constitutionInputBox.TextChanged += new System.EventHandler(this.constitutionInputBox_TextChanged);
             // 
             // dexterityInputBox
             // 
@@ -158,6 +159,7 @@
             this.dexterityInputBox.Name = "dexterityInputBox";
             this.dexterityInputBox.Size = new System.Drawing.Size(43, 35);
             this.dexterityInputBox.TabIndex = 14;
+            this.dexterityInputBox.TextChanged += new System.EventHandler(this.dexterityInputBox_TextChanged);
             // 
             // intelligenceInputBox
             // 
@@ -165,6 +167,7 @@
             this.intelligenceInputBox.Name = "intelligenceInputBox";
             this.intelligenceInputBox.Size = new System.Drawing.Size(43, 35);
             this.intelligenceInputBox.TabIndex = 15;
+            this.intelligenceInputBox.TextChanged += new System.EventHandler(this.intelligenceInputBox_TextChanged);
             // 
             // wisdomInputBox
             // 
@@ -172,6 +175,7 @@
             this.wisdomInputBox.Name = "wisdomInputBox";
             this.wisdomInputBox.Size = new System.Drawing.Size(43, 35);
             this.wisdomInputBox.TabIndex = 16;
+            this.wisdomInputBox.TextChanged += new System.EventHandler(this.wisdomInputBox_TextChanged);
             // 
             // charismaInputBox
             // 
@@ -179,6 +183,7 @@
             this.charismaInputBox.Name = "charismaInputBox";
             this.charismaInputBox.Size = new System.Drawing.Size(43, 35);
             this.charismaInputBox.TabIndex = 17;
+            this.charismaInputBox.TextChanged += new System.EventHandler(this.charismaInputBox_TextChanged);
             // 
             // charismaLabel
             // 
