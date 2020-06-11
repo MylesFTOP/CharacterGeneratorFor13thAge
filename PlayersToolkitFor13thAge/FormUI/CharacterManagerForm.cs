@@ -38,6 +38,12 @@ namespace FormUI
             textBoxes.Add(intelligenceInputBox);
             textBoxes.Add(charismaInputBox);
 
+            List<TextBox> textBoxesParsable = textBoxes.Where(x => uint.TryParse(x.Text, out uint parsable)).ToList();
+
+            if ( textBoxes.Count != textBoxesParsable.Count ) {
+                output = false;
+            }
+
             List<uint> inputValues = new List<uint>();
             inputValues.Add(strengthValue);
             inputValues.Add(constitutionValue);
@@ -45,15 +51,6 @@ namespace FormUI
             inputValues.Add(wisdomValue);
             inputValues.Add(intelligenceValue);
             inputValues.Add(charismaValue);
-
-            foreach ( var textBox in textBoxes )
-            {
-
-            }
-
-            if ( !uint.TryParse(strengthInputBox.Text, out strengthValue) ) {
-                output = false;
-            }
 
             foreach ( var textBox in textBoxes )
             {
