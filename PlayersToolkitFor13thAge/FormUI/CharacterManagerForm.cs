@@ -47,13 +47,14 @@ namespace FormUI
 
         private void UpdateModifiers(TextBox textBox, Label modifier, Label modifierWithLevel) {
             AbilityStat abilityStat = new AbilityStat();
-            int level = int.Parse(characterLevel.Text);
+            int level = int.TryParse(characterLevel.Text, out int levelParse) ? levelParse : 0 ;
+            uint value = uint.TryParse(textBox.Text, out uint valueParse) ? valueParse : 0 ;
             string displayFormat = "+0;-0";
             modifier.Text = abilityStat
-                .CalculateModifier(uint.Parse(textBox.Text))
+                .CalculateModifier(value)
                 .ToString(displayFormat);
             modifierWithLevel.Text = abilityStat
-                .CalculateModifierWithLevel(uint.Parse(textBox.Text), level)
+                .CalculateModifierWithLevel(value, level)
                 .ToString(displayFormat);
         }
 
