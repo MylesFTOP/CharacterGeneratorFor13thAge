@@ -58,6 +58,15 @@ namespace FormUI
                 .ToString(displayFormat);
         }
 
+        private void characterLevel_TextChanged(object sender, EventArgs e) {
+            UpdateModifiers(strengthInputBox, strengthModifier, strengthModifierWithLevel);
+            UpdateModifiers(constitutionInputBox, constitutionModifier, constitutionModifierWithLevel);
+            UpdateModifiers(dexterityInputBox, dexterityModifier, dexterityModifierWithLevel);
+            UpdateModifiers(intelligenceInputBox, intelligenceModifier, intelligenceModifierWithLevel);
+            UpdateModifiers(wisdomInputBox, wisdomModifier, wisdomModifierWithLevel);
+            UpdateModifiers(charismaInputBox, charismaModifier, charismaModifierWithLevel);
+        }
+
         private bool ValidateInput() {
             bool output = true;
             uint strengthValue = 0, constitutionValue = 0, dexterityValue = 0, wisdomValue = 0, intelligenceValue = 0, charismaValue = 0 ;

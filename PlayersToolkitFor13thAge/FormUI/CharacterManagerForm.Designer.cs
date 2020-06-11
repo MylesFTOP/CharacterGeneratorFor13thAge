@@ -366,6 +366,7 @@
             this.characterLevel.Name = "characterLevel";
             this.characterLevel.Size = new System.Drawing.Size(222, 35);
             this.characterLevel.TabIndex = 38;
+            this.characterLevel.TextChanged += new System.EventHandler(this.characterLevel_TextChanged);
             // 
             // saveCharacter
             // 
