@@ -34,14 +34,13 @@ namespace ToolkitLibrary
             AbilityStatValue = uint.Parse(inputValue);
         }
 
-        public enum AbilityStatType
-        {
+        public enum AbilityStatType {
             strength,
             constitution,
             dexterity,
             wisdom,
             intelligence,
-            charisma,
+            charisma
         }
     }
 }
