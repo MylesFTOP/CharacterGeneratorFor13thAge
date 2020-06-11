@@ -21,5 +21,17 @@ namespace ToolkitLibrary
             int modifierWithLevel = CalculateModifier(abilityStat) + characterLevel;
             return modifierWithLevel;
         }
+
+        public AbilityStat() {
+
+        }
+
+        public AbilityStat(uint inputValue) {
+            AbilityStatValue = inputValue;
+        }
+
+        public AbilityStat(string inputValue) {
+            AbilityStatValue = uint.Parse(inputValue);
+        }
     }
 }

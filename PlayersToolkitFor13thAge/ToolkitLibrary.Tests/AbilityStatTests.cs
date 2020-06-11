@@ -26,5 +26,21 @@ namespace ToolkitLibrary.Tests
             int actualValue = abilityStat.CalculateModifierWithLevel(12, 1);
             Assert.Equal(expectedValue, actualValue);
         }
+
+        [Fact]
+        public void AbilityStat_StringOverloadShouldReturnNumber() {
+            AbilityStat abilityStatWithOverload = new AbilityStat("1");
+            uint expectedValue = 1;
+            uint actualValue = abilityStatWithOverload.AbilityStatValue;
+            Assert.Equal(expectedValue, actualValue);
+        }
+
+        [Fact]
+        public void AbilityStat_NumberOverloadShouldReturnNumber() {
+            AbilityStat abilityStatWithOverload = new AbilityStat(1);
+            uint expectedValue = 1;
+            uint actualValue = abilityStatWithOverload.AbilityStatValue;
+            Assert.Equal(expectedValue, actualValue);
+        }
     }
 }
