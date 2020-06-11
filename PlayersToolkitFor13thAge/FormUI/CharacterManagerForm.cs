@@ -38,7 +38,9 @@ namespace FormUI
             textBoxes.Add(intelligenceInputBox);
             textBoxes.Add(charismaInputBox);
 
-            List<TextBox> textBoxesParsable = textBoxes.Where(x => uint.TryParse(x.Text, out uint parsable)).ToList();
+            List<TextBox> textBoxesParsable = textBoxes
+                .Where(x => uint.TryParse(x.Text, out uint parsable))
+                .ToList();
 
             if ( textBoxes.Count != textBoxesParsable.Count ) {
                 output = false;

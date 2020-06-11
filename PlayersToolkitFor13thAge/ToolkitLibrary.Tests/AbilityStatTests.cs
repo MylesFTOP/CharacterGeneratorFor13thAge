@@ -15,7 +15,7 @@ namespace ToolkitLibrary.Tests
         [Theory]
         [InlineData(1, 13)]
         [InlineData(-1, 9)]
-        public void AbilityStat_ModifierShouldCalculate(int expectedValue, int stat) {
+        public void AbilityStat_ModifierShouldCalculate(int expectedValue, uint stat) {
             int actualValue = abilityStat.CalculateModifier(stat);
             Assert.Equal(expectedValue, actualValue);
         }
