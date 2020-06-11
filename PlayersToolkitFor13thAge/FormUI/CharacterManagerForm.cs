@@ -114,7 +114,6 @@ namespace FormUI
             }
             
             if ( characterName.TextLength == 0 || characterClass.TextLength == 0 || characterRace.TextLength == 0 || characterLevel.TextLength == 0 ) {
-                bool length = true;
                 output = false;
             }
 
