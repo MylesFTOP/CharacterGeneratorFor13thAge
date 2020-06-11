@@ -10,18 +10,23 @@ namespace ToolkitLibrary
     {
         public int CombatStatValue { get; private set; }
 
-        // public static int CalculateArmorClass(CharacterModel character) {
-        //     // TODO : Add lookup for base value from character class to then pass to argument
-        //     int baseValue = 16;
-        //     int armorClass = CalculateCombatStat(baseValue, character.Constitution, character.Dexterity, character.Wisdom);
-        //     return armorClass;
-        // }
+        public static int CalculateArmorClass(CharacterModel character) {
+            // TODO : Add lookup for base value from character class to then pass to argument
+            int baseValue = 16;
 
-        // private static int CalculateCombatStat(int classBaseValue, AbilityStat firstAbilityStat, AbilityStat secondAbilityStat, AbilityStat thirdAbilityStat) {
-        //     Array abilityStats[] = [firstAbilityStat, secondAbilityStat, thirdAbilityStat];
-        //     abilityStats = Array.Sort(abilityStats[]);
-        //     int combatStat = classBaseValue + (int)Array.IndexOf(abilityStats[], 1);
-        //     return combatStat; 
-        // }
+            int[] abilityStats = { character.Constitution, character.Dexterity, character.Wisdom };
+            Array.Sort(abilityStats);
+            int armorClass = baseValue + (int)Array.IndexOf(abilityStats, 1);
+             // CalculateCombatStat(baseValue, character.Constitution, character.Dexterity, character.Wisdom);
+
+            return armorClass;
+        }
+
+        //private static int CalculateCombatStat(int classBaseValue, AbilityStat firstAbilityStat, AbilityStat secondAbilityStat, AbilityStat thirdAbilityStat) {
+        //    Array abilityStats[] = [firstAbilityStat, secondAbilityStat, thirdAbilityStat];
+        //    abilityStats = Array.Sort(abilityStats[]);
+        //    int combatStat = classBaseValue + (int)Array.IndexOf(abilityStats[], 1);
+        //    return combatStat;
+        //}
     }
 }
