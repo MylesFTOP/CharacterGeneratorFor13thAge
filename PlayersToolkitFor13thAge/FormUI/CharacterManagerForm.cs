@@ -27,7 +27,18 @@ namespace FormUI
                     characterName.Text,
                     characterClass.Text,
                     characterRace.Text,
-                    characterLevel.Text);
+                    characterLevel.Text,
+                    strengthInputBox.Text,
+                    constitutionInputBox.Text,
+                    dexterityInputBox.Text,
+                    intelligenceInputBox.Text,
+                    wisdomInputBox.Text,
+                    charismaInputBox.Text);
+
+                foreach ( IDataConnection connection in GlobalConfig.Connections )
+                {
+                    connection.SaveCharacter(model);
+                }
             }
             else
             {
@@ -63,7 +74,7 @@ namespace FormUI
             AbilityStat abilityStat = new AbilityStat();
             int level = int.TryParse(characterLevel.Text, out int levelParse) ? levelParse : 0 ;
             string displayFormat = "+0;-0";
-            if (uint.TryParse(textBox.Text, out uint value) )
+            if ( uint.TryParse(textBox.Text, out uint value) )
             {
                 modifier.Text = abilityStat
                     .CalculateModifier(value)
@@ -85,7 +96,6 @@ namespace FormUI
 
         private bool ValidateInput() {
             bool output = true;
-            uint strengthValue = 0, constitutionValue = 0, dexterityValue = 0, wisdomValue = 0, intelligenceValue = 0, charismaValue = 0 ;
 
             List<TextBox> textBoxes = new List<TextBox> {
                 strengthInputBox,
@@ -104,6 +114,23 @@ namespace FormUI
                 output = false;
             }
 
+            foreach ( var textBox in textBoxes )
+            {
+                if ( textBox.TextLength == 0 )
+                {
+                    output = false;
+                }
+            }
+
+            CharacterModel m = new CharacterModel();
+
+            uint strengthValue = m.ParsedUint(strengthInputBox.Text),
+                constitutionValue = m.ParsedUint(constitutionInputBox.Text),
+                dexterityValue = m.ParsedUint(dexterityInputBox.Text),
+                wisdomValue = m.ParsedUint(wisdomInputBox.Text),
+                intelligenceValue = m.ParsedUint(intelligenceInputBox.Text),
+                charismaValue = m.ParsedUint(charismaInputBox.Text);
+
             List<uint> inputValues = new List<uint> {
                 strengthValue,
                 constitutionValue,
@@ -112,14 +139,6 @@ namespace FormUI
                 intelligenceValue,
                 charismaValue
             };
-
-            foreach ( var textBox in textBoxes )
-            {
-                if ( textBox.TextLength == 0 )
-                {
-                    output = false;
-                }
-            }
 
             foreach ( var inputValue in inputValues )
             {

@@ -40,7 +40,7 @@ namespace ToolkitLibrary.DataAccess.TextHelpers
                 c.Constitution = uint.Parse(cols[6]);
                 c.Dexterity = uint.Parse(cols[7]);
                 c.Wisdom = uint.Parse(cols[8]);
-                c.Intellect = uint.Parse(cols[9]);
+                c.Intelligence = uint.Parse(cols[9]);
                 c.Charisma = uint.Parse(cols[10]);
                 output.Add(c);
             }
@@ -52,7 +52,7 @@ namespace ToolkitLibrary.DataAccess.TextHelpers
 
             foreach ( CharacterModel c in models )
             {
-                lines.Add($"{c.CharacterID},{c.CharacterName},{c.PlayerID},{c.CharacterRace},{c.CharacterClass},{c.Strength},{c.Constitution},{c.Dexterity},{c.Wisdom},{c.Intellect},{c.Charisma}");
+                lines.Add($"{c.CharacterID},{c.CharacterName},{c.PlayerID},{c.CharacterRace},{c.CharacterClass},{c.Strength},{c.Constitution},{c.Dexterity},{c.Wisdom},{c.Intelligence},{c.Charisma}");
             }
 
             File.WriteAllLines(fileName.FullFilePath(), lines);

@@ -16,7 +16,7 @@ namespace ToolkitLibrary
         public uint Constitution { get; set; } 
         public uint Dexterity { get; set; }
         public uint Wisdom { get; set; }
-        public uint Intellect { get; set; }
+        public uint Intelligence { get; set; }
         public uint Charisma { get; set; }
         //public CombatStat ArmorClass { get; private set; } = new CombatStat();
         //public CombatStat PhysicalDefense { get; private set; } = new CombatStat();
@@ -36,13 +36,27 @@ namespace ToolkitLibrary
 
         }
 
-        public CharacterModel(string characterName, string characterClass, string characterRace, string characterLevel) {
+        public CharacterModel(string characterName, string characterClass, string characterRace, string characterLevel,
+            string strength, string constitution, string dexterity, string wisdom, string intelligence, string charisma) {
+            // TODO: Add logic for identifying users
+            PlayerID = 21;
+
             CharacterName = characterName;
             CharacterClass = characterClass;
             CharacterRace = characterRace;
+            CharacterLevel = ParsedUint(characterLevel);
 
-            uint.TryParse(characterLevel, out uint characterLevelValue);
-            CharacterLevel = characterLevelValue;
+            Strength = ParsedUint(strength);
+            Constitution = ParsedUint(constitution);
+            Dexterity = ParsedUint(dexterity);
+            Wisdom = ParsedUint(wisdom);
+            Intelligence = ParsedUint(intelligence);
+            Charisma = ParsedUint(charisma);
+        }
+
+        public uint ParsedUint(string inputString) {
+            uint.TryParse(inputString, out uint output);
+            return output;
         }
     }
 }
