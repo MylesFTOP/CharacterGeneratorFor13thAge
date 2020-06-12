@@ -97,7 +97,7 @@ namespace FormUI
             };
 
             List<TextBox> textBoxesParsable = textBoxes
-                .Where(x => uint.TryParse(x.Text, out uint parsable))
+                .Where(x => uint.TryParse(x.Text, out uint parsedValue))
                 .ToList();
 
             if ( textBoxes.Count != textBoxesParsable.Count ) {
