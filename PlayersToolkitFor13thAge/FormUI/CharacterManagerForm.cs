@@ -86,14 +86,15 @@ namespace FormUI
         private bool ValidateInput() {
             bool output = true;
             uint strengthValue = 0, constitutionValue = 0, dexterityValue = 0, wisdomValue = 0, intelligenceValue = 0, charismaValue = 0 ;
-            
-            List<TextBox> textBoxes = new List<TextBox>();
-            textBoxes.Add(strengthInputBox);
-            textBoxes.Add(constitutionInputBox);
-            textBoxes.Add(dexterityInputBox);
-            textBoxes.Add(wisdomInputBox);
-            textBoxes.Add(intelligenceInputBox);
-            textBoxes.Add(charismaInputBox);
+
+            List<TextBox> textBoxes = new List<TextBox> {
+                strengthInputBox,
+                constitutionInputBox,
+                dexterityInputBox,
+                wisdomInputBox,
+                intelligenceInputBox,
+                charismaInputBox
+            };
 
             List<TextBox> textBoxesParsable = textBoxes
                 .Where(x => uint.TryParse(x.Text, out uint parsable))
@@ -103,13 +104,14 @@ namespace FormUI
                 output = false;
             }
 
-            List<uint> inputValues = new List<uint>();
-            inputValues.Add(strengthValue);
-            inputValues.Add(constitutionValue);
-            inputValues.Add(dexterityValue);
-            inputValues.Add(wisdomValue);
-            inputValues.Add(intelligenceValue);
-            inputValues.Add(charismaValue);
+            List<uint> inputValues = new List<uint> {
+                strengthValue,
+                constitutionValue,
+                dexterityValue,
+                wisdomValue,
+                intelligenceValue,
+                charismaValue
+            };
 
             foreach ( var textBox in textBoxes )
             {
