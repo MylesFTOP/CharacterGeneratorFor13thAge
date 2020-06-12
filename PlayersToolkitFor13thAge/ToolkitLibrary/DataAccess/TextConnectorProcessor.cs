@@ -36,12 +36,13 @@ namespace ToolkitLibrary.DataAccess.TextHelpers
                 c.PlayerID = int.Parse(cols[2]);
                 c.CharacterRace = cols[3];
                 c.CharacterClass = cols[4];
-                c.Strength = uint.Parse(cols[5]);
-                c.Constitution = uint.Parse(cols[6]);
-                c.Dexterity = uint.Parse(cols[7]);
-                c.Wisdom = uint.Parse(cols[8]);
-                c.Intelligence = uint.Parse(cols[9]);
-                c.Charisma = uint.Parse(cols[10]);
+                c.CharacterLevel = uint.Parse(cols[5]);
+                c.Strength = uint.Parse(cols[6]);
+                c.Constitution = uint.Parse(cols[7]);
+                c.Dexterity = uint.Parse(cols[8]);
+                c.Wisdom = uint.Parse(cols[9]);
+                c.Intelligence = uint.Parse(cols[10]);
+                c.Charisma = uint.Parse(cols[11]);
                 output.Add(c);
             }
             return output;
@@ -52,7 +53,7 @@ namespace ToolkitLibrary.DataAccess.TextHelpers
 
             foreach ( CharacterModel c in models )
             {
-                lines.Add($"{c.CharacterID},{c.CharacterName},{c.PlayerID},{c.CharacterRace},{c.CharacterClass},{c.Strength},{c.Constitution},{c.Dexterity},{c.Wisdom},{c.Intelligence},{c.Charisma}");
+                lines.Add($"{c.CharacterID},{c.CharacterName},{c.PlayerID},{c.CharacterRace},{c.CharacterClass},{c.CharacterLevel},{c.Strength},{c.Constitution},{c.Dexterity},{c.Wisdom},{c.Intelligence},{c.Charisma}");
             }
 
             File.WriteAllLines(fileName.FullFilePath(), lines);
