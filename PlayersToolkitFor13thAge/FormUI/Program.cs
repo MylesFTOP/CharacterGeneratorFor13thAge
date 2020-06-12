@@ -15,7 +15,7 @@ namespace FormUI
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            ToolkitLibrary.GlobalConfig.InitialiseConnections(true, true);
+            ToolkitLibrary.GlobalConfig.InitialiseConnections(false, true);
             Application.Run(new CharacterManagerForm());
         }
     }

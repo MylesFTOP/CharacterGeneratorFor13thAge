@@ -11,12 +11,13 @@ namespace ToolkitLibrary
         public int PlayerID { get; set; }
         public string CharacterRace { get; set; }
         public string CharacterClass { get; set; }
-        public int Strength { get; set; } 
-        public int Constitution { get; set; } 
-        public int Dexterity { get; set; }
-        public int Wisdom { get; set; }
-        public int Intellect { get; set; }
-        public int Charisma { get; set; }
+        public uint CharacterLevel { get; set; } 
+        public uint Strength { get; set; } 
+        public uint Constitution { get; set; } 
+        public uint Dexterity { get; set; }
+        public uint Wisdom { get; set; }
+        public uint Intellect { get; set; }
+        public uint Charisma { get; set; }
         //public CombatStat ArmorClass { get; private set; } = new CombatStat();
         //public CombatStat PhysicalDefense { get; private set; } = new CombatStat();
         //public CombatStat MentalDefense { get; private set; } = new CombatStat();
@@ -30,5 +31,18 @@ namespace ToolkitLibrary
         //public List<string> Skills { get; set; }
         //public List<string> Spells { get; set; }
         //public List<string> Items { get; set; }
+
+        public CharacterModel() {
+
+        }
+
+        public CharacterModel(string characterName, string characterClass, string characterRace, string characterLevel) {
+            CharacterName = characterName;
+            CharacterClass = characterClass;
+            CharacterRace = characterRace;
+
+            uint.TryParse(characterLevel, out uint characterLevelValue);
+            CharacterLevel = characterLevelValue;
+        }
     }
 }

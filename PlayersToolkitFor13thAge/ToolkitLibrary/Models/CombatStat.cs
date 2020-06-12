@@ -20,8 +20,8 @@ namespace ToolkitLibrary
 
         // TODO: Add methods to calculate PD and MD
 
-        private static int CalculateCombatStat(int classBaseValue, int firstAbilityStat, int secondAbilityStat, int thirdAbilityStat) {
-            int[] abilityStats = { firstAbilityStat, secondAbilityStat, thirdAbilityStat };
+        private static int CalculateCombatStat(int classBaseValue, uint firstAbilityStat, uint secondAbilityStat, uint thirdAbilityStat) {
+            uint[] abilityStats = { firstAbilityStat, secondAbilityStat, thirdAbilityStat };
             Array.Sort(abilityStats);
             int combatStat = classBaseValue + Array.IndexOf(abilityStats, 1);
             return combatStat;

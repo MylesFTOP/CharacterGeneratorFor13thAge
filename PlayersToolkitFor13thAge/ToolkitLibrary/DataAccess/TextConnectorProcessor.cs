@@ -36,12 +36,12 @@ namespace ToolkitLibrary.DataAccess.TextHelpers
                 c.PlayerID = int.Parse(cols[2]);
                 c.CharacterRace = cols[3];
                 c.CharacterClass = cols[4];
-                c.Strength = int.Parse(cols[5]);
-                c.Constitution = int.Parse(cols[6]);
-                c.Dexterity = int.Parse(cols[7]);
-                c.Wisdom = int.Parse(cols[8]);
-                c.Intellect = int.Parse(cols[9]);
-                c.Charisma = int.Parse(cols[10]);
+                c.Strength = uint.Parse(cols[5]);
+                c.Constitution = uint.Parse(cols[6]);
+                c.Dexterity = uint.Parse(cols[7]);
+                c.Wisdom = uint.Parse(cols[8]);
+                c.Intellect = uint.Parse(cols[9]);
+                c.Charisma = uint.Parse(cols[10]);
                 output.Add(c);
             }
             return output;
