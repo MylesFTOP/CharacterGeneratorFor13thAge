@@ -62,6 +62,14 @@
             this.characterRace = new System.Windows.Forms.TextBox();
             this.characterLevel = new System.Windows.Forms.TextBox();
             this.saveCharacter = new System.Windows.Forms.Button();
+            this.hitPointsLabel = new System.Windows.Forms.Label();
+            this.armorClassLabel = new System.Windows.Forms.Label();
+            this.physicalDefenseLabel = new System.Windows.Forms.Label();
+            this.mentalDefenseLabel = new System.Windows.Forms.Label();
+            this.hitPoints = new System.Windows.Forms.Label();
+            this.armorClass = new System.Windows.Forms.Label();
+            this.physicalDefense = new System.Windows.Forms.Label();
+            this.mentalDefense = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // headerLabel
@@ -370,7 +378,7 @@
             // 
             // saveCharacter
             // 
-            this.saveCharacter.Location = new System.Drawing.Point(767, 166);
+            this.saveCharacter.Location = new System.Drawing.Point(879, 148);
             this.saveCharacter.Name = "saveCharacter";
             this.saveCharacter.Size = new System.Drawing.Size(246, 89);
             this.saveCharacter.TabIndex = 39;
@@ -378,12 +386,92 @@
             this.saveCharacter.UseVisualStyleBackColor = true;
             this.saveCharacter.Click += new System.EventHandler(this.saveCharacter_Click);
             // 
+            // hitPointsLabel
+            // 
+            this.hitPointsLabel.AutoSize = true;
+            this.hitPointsLabel.Location = new System.Drawing.Point(555, 115);
+            this.hitPointsLabel.Name = "hitPointsLabel";
+            this.hitPointsLabel.Size = new System.Drawing.Size(40, 30);
+            this.hitPointsLabel.TabIndex = 40;
+            this.hitPointsLabel.Text = "HP";
+            // 
+            // armorClassLabel
+            // 
+            this.armorClassLabel.AutoSize = true;
+            this.armorClassLabel.Location = new System.Drawing.Point(555, 155);
+            this.armorClassLabel.Name = "armorClassLabel";
+            this.armorClassLabel.Size = new System.Drawing.Size(40, 30);
+            this.armorClassLabel.TabIndex = 41;
+            this.armorClassLabel.Text = "AC";
+            // 
+            // physicalDefenseLabel
+            // 
+            this.physicalDefenseLabel.AutoSize = true;
+            this.physicalDefenseLabel.Location = new System.Drawing.Point(555, 195);
+            this.physicalDefenseLabel.Name = "physicalDefenseLabel";
+            this.physicalDefenseLabel.Size = new System.Drawing.Size(40, 30);
+            this.physicalDefenseLabel.TabIndex = 42;
+            this.physicalDefenseLabel.Text = "PD";
+            // 
+            // mentalDefenseLabel
+            // 
+            this.mentalDefenseLabel.AutoSize = true;
+            this.mentalDefenseLabel.Location = new System.Drawing.Point(548, 235);
+            this.mentalDefenseLabel.Name = "mentalDefenseLabel";
+            this.mentalDefenseLabel.Size = new System.Drawing.Size(47, 30);
+            this.mentalDefenseLabel.TabIndex = 43;
+            this.mentalDefenseLabel.Text = "MD";
+            // 
+            // hitPoints
+            // 
+            this.hitPoints.AutoSize = true;
+            this.hitPoints.Location = new System.Drawing.Point(601, 115);
+            this.hitPoints.Name = "hitPoints";
+            this.hitPoints.Size = new System.Drawing.Size(52, 30);
+            this.hitPoints.TabIndex = 44;
+            this.hitPoints.Text = "<0>";
+            // 
+            // armorClass
+            // 
+            this.armorClass.AutoSize = true;
+            this.armorClass.Location = new System.Drawing.Point(601, 155);
+            this.armorClass.Name = "armorClass";
+            this.armorClass.Size = new System.Drawing.Size(52, 30);
+            this.armorClass.TabIndex = 45;
+            this.armorClass.Text = "<0>";
+            // 
+            // physicalDefense
+            // 
+            this.physicalDefense.AutoSize = true;
+            this.physicalDefense.Location = new System.Drawing.Point(601, 195);
+            this.physicalDefense.Name = "physicalDefense";
+            this.physicalDefense.Size = new System.Drawing.Size(52, 30);
+            this.physicalDefense.TabIndex = 46;
+            this.physicalDefense.Text = "<0>";
+            // 
+            // mentalDefense
+            // 
+            this.mentalDefense.AutoSize = true;
+            this.mentalDefense.Location = new System.Drawing.Point(601, 237);
+            this.mentalDefense.Name = "mentalDefense";
+            this.mentalDefense.Size = new System.Drawing.Size(52, 30);
+            this.mentalDefense.TabIndex = 47;
+            this.mentalDefense.Text = "<0>";
+            // 
             // CharacterManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1179, 392);
+            this.Controls.Add(this.mentalDefense);
+            this.Controls.Add(this.physicalDefense);
+            this.Controls.Add(this.armorClass);
+            this.Controls.Add(this.hitPoints);
+            this.Controls.Add(this.mentalDefenseLabel);
+            this.Controls.Add(this.physicalDefenseLabel);
+            this.Controls.Add(this.armorClassLabel);
+            this.Controls.Add(this.hitPointsLabel);
             this.Controls.Add(this.saveCharacter);
             this.Controls.Add(this.characterLevel);
             this.Controls.Add(this.characterRace);
@@ -468,5 +556,13 @@
         private System.Windows.Forms.TextBox characterRace;
         private System.Windows.Forms.TextBox characterLevel;
         private System.Windows.Forms.Button saveCharacter;
+        private System.Windows.Forms.Label hitPointsLabel;
+        private System.Windows.Forms.Label armorClassLabel;
+        private System.Windows.Forms.Label physicalDefenseLabel;
+        private System.Windows.Forms.Label mentalDefenseLabel;
+        private System.Windows.Forms.Label hitPoints;
+        private System.Windows.Forms.Label armorClass;
+        private System.Windows.Forms.Label physicalDefense;
+        private System.Windows.Forms.Label mentalDefense;
     }
 }
