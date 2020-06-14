@@ -12,13 +12,13 @@ namespace ToolkitLibrary
         public int Modifier { get; private set; }
         public int ModifierWithLevel { get; private set; }
 
-        public int CalculateModifier(uint abilityStat) {
+        public uint CalculateModifier(uint abilityStat) {
             double modifier = Math.Floor(((double)abilityStat - 10) / 2);
-            return (int)modifier;
+            return (uint)modifier;
         }
 
-        public int CalculateModifierWithLevel(uint abilityStat, int characterLevel) {
-            int modifierWithLevel = CalculateModifier(abilityStat) + characterLevel;
+        public uint CalculateModifierWithLevel(uint abilityStat, uint characterLevel) {
+            uint modifierWithLevel = CalculateModifier(abilityStat) + characterLevel;
             return modifierWithLevel;
         }
 

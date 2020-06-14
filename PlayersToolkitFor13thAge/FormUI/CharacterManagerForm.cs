@@ -13,6 +13,8 @@ namespace FormUI
 {
     public partial class CharacterManagerForm : Form
     {
+        CharacterModel m = new CharacterModel();
+
         public CharacterManagerForm() {
             InitializeComponent();
         }
@@ -72,7 +74,8 @@ namespace FormUI
 
         private void UpdateModifiers(TextBox textBox, Label modifier, Label modifierWithLevel) {
             AbilityStat abilityStat = new AbilityStat();
-            int level = int.TryParse(characterLevel.Text, out int levelParse) ? levelParse : 0 ;
+
+            uint level = m.ParsedUint(characterLevel.Text) ;
             string displayFormat = "+0;-0";
             if ( uint.TryParse(textBox.Text, out uint value) )
             {
@@ -83,6 +86,11 @@ namespace FormUI
                     .CalculateModifierWithLevel(value, level)
                     .ToString(displayFormat);
             }
+        }
+
+        private void UpdateCombatStats() {
+            CombatStat combatStat = new CombatStat();
+
         }
 
         private void characterLevel_TextChanged(object sender, EventArgs e) {
@@ -121,8 +129,6 @@ namespace FormUI
                     output = false;
                 }
             }
-
-            CharacterModel m = new CharacterModel();
 
             uint strengthValue = m.ParsedUint(strengthInputBox.Text),
                 constitutionValue = m.ParsedUint(constitutionInputBox.Text),
