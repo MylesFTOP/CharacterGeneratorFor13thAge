@@ -91,6 +91,8 @@ namespace FormUI
         private void UpdateCombatStats() {
             CombatStat combatStat = new CombatStat();
 
+            uint level = m.ParsedUint(characterLevel.Text);
+
         }
 
         private void characterLevel_TextChanged(object sender, EventArgs e) {
@@ -159,10 +161,6 @@ namespace FormUI
             }
 
             return output;
-        }
-
-        private void strengthModifier_Click(object sender, EventArgs e) {
-
         }
     }
 }

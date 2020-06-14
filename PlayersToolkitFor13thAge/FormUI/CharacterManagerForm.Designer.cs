@@ -246,7 +246,6 @@
             this.strengthModifier.Size = new System.Drawing.Size(52, 30);
             this.strengthModifier.TabIndex = 23;
             this.strengthModifier.Text = "<0>";
-            this.strengthModifier.Click += new System.EventHandler(this.strengthModifier_Click);
             // 
             // strengthModifierWithLevel
             // 
