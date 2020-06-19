@@ -22,6 +22,7 @@ namespace FormUI
         private void CharacterManagerForm_Load(object sender, EventArgs e) {
 
         }
+
         private void saveCharacter_Click(object sender, EventArgs e) {
             if ( ValidateInput() )
             {
@@ -29,7 +30,7 @@ namespace FormUI
                     characterName.Text,
                     characterClass.Text,
                     characterRace.Text,
-                    characterLevel.Text,
+                    characterLevelInputBox.Text,
                     strengthInputBox.Text,
                     constitutionInputBox.Text,
                     dexterityInputBox.Text,
@@ -66,16 +67,32 @@ namespace FormUI
 
         private void wisdomInputBox_TextChanged(object sender, EventArgs e) {
             UpdateModifiers(wisdomInputBox, wisdomModifier, wisdomModifierWithLevel);
+
+
         }
 
         private void charismaInputBox_TextChanged(object sender, EventArgs e) {
             UpdateModifiers(charismaInputBox, charismaModifier, charismaModifierWithLevel);
+
+            CombatStat combatStat = new CombatStat();
+
+            uint level = m.ParsedUint(characterLevelInputBox.Text);
+
+            bool constitutionInputValid = uint.TryParse(constitutionInputBox.Text, out uint constitutionValue);
+            bool dexterityInputValid = uint.TryParse(dexterityInputBox.Text, out uint dexterityValue);
+            bool wisdomInputValid = uint.TryParse(wisdomInputBox.Text, out uint wisdomValue);
+            bool levelInputValid = uint.TryParse(characterLevelInputBox.Text, out uint characterLevel);
+
+            if ( constitutionInputValid && dexterityInputValid && wisdomInputValid && levelInputValid )
+            {
+                armorClass.Text = combatStat.CalculateCombatStat(10, constitutionValue, dexterityValue, wisdomValue, characterLevel).ToString();
+            }
         }
 
         private void UpdateModifiers(TextBox textBox, Label modifier, Label modifierWithLevel) {
             AbilityStat abilityStat = new AbilityStat();
 
-            uint level = m.ParsedUint(characterLevel.Text) ;
+            uint level = m.ParsedUint(characterLevelInputBox.Text) ;
             string displayFormat = "+0;-0";
             if ( uint.TryParse(textBox.Text, out uint value) )
             {
@@ -91,7 +108,7 @@ namespace FormUI
         private void UpdateCombatStats() {
             CombatStat combatStat = new CombatStat();
 
-            uint level = m.ParsedUint(characterLevel.Text);
+            uint level = m.ParsedUint(characterLevelInputBox.Text);
 
         }
 
@@ -156,7 +173,7 @@ namespace FormUI
                 }
             }
             
-            if ( characterName.TextLength == 0 || characterClass.TextLength == 0 || characterRace.TextLength == 0 || characterLevel.TextLength == 0 ) {
+            if ( characterName.TextLength == 0 || characterClass.TextLength == 0 || characterRace.TextLength == 0 || characterLevelInputBox.TextLength == 0 ) {
                 output = false;
             }
 

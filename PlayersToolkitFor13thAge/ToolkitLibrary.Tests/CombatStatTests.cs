@@ -10,32 +10,28 @@ namespace ToolkitLibrary.Tests
     public class CombatStatTests
     {
         private readonly CombatStat combatStat = new CombatStat();
-        
+
+        CharacterModel model = new CharacterModel("test", "test", "test", "3", "13", "16", "14", "14", "13", "19");
 
         [Fact]
         public void CombatStat_ArmorClassShouldCalculate() {
-            CharacterModel model = new CharacterModel();
-                model.Strength = 13;
-                model.Constitution = 16;
-                model.Dexterity = 14;
-                model.Wisdom = 14;
-                model.Intelligence = 13;
-                model.Charisma = 19;
-                model.CharacterLevel = 3;
-
             int expectedValue = 15;
             int actualValue = combatStat.CalculateArmorClass(model);
             Assert.Equal(expectedValue, actualValue);
         }
 
-        [Fact(Skip = "Test is not yet written")]
+        [Fact]
         public void CombatStat_PhysicalDefenseShouldCalculate() {
-
+            int expectedValue = 16;
+            int actualValue = combatStat.CalculatePhysicalDefense(model);
+            Assert.Equal(expectedValue, actualValue);
         }
 
-        [Fact(Skip = "Test is not yet written")]
+        [Fact]
         public void CombatStat_MentalDefenseShouldCalculate() {
-
+            int expectedValue = 15;
+            int actualValue = combatStat.CalculateMentalDefense(model);
+            Assert.Equal(expectedValue, actualValue);
         }
     }
 }

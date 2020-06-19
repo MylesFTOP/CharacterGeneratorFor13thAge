@@ -60,7 +60,7 @@
             this.characterName = new System.Windows.Forms.TextBox();
             this.characterClass = new System.Windows.Forms.TextBox();
             this.characterRace = new System.Windows.Forms.TextBox();
-            this.characterLevel = new System.Windows.Forms.TextBox();
+            this.characterLevelInputBox = new System.Windows.Forms.TextBox();
             this.saveCharacter = new System.Windows.Forms.Button();
             this.hitPointsLabel = new System.Windows.Forms.Label();
             this.armorClassLabel = new System.Windows.Forms.Label();
@@ -367,13 +367,13 @@
             this.characterRace.Size = new System.Drawing.Size(222, 35);
             this.characterRace.TabIndex = 37;
             // 
-            // characterLevel
+            // characterLevelInputBox
             // 
-            this.characterLevel.Location = new System.Drawing.Point(945, 56);
-            this.characterLevel.Name = "characterLevel";
-            this.characterLevel.Size = new System.Drawing.Size(222, 35);
-            this.characterLevel.TabIndex = 38;
-            this.characterLevel.TextChanged += new System.EventHandler(this.characterLevel_TextChanged);
+            this.characterLevelInputBox.Location = new System.Drawing.Point(945, 56);
+            this.characterLevelInputBox.Name = "characterLevelInputBox";
+            this.characterLevelInputBox.Size = new System.Drawing.Size(222, 35);
+            this.characterLevelInputBox.TabIndex = 38;
+            this.characterLevelInputBox.TextChanged += new System.EventHandler(this.characterLevel_TextChanged);
             // 
             // saveCharacter
             // 
@@ -472,7 +472,7 @@
             this.Controls.Add(this.armorClassLabel);
             this.Controls.Add(this.hitPointsLabel);
             this.Controls.Add(this.saveCharacter);
-            this.Controls.Add(this.characterLevel);
+            this.Controls.Add(this.characterLevelInputBox);
             this.Controls.Add(this.characterRace);
             this.Controls.Add(this.characterClass);
             this.Controls.Add(this.characterName);
@@ -553,7 +553,7 @@
         private System.Windows.Forms.TextBox characterName;
         private System.Windows.Forms.TextBox characterClass;
         private System.Windows.Forms.TextBox characterRace;
-        private System.Windows.Forms.TextBox characterLevel;
+        private System.Windows.Forms.TextBox characterLevelInputBox;
         private System.Windows.Forms.Button saveCharacter;
         private System.Windows.Forms.Label hitPointsLabel;
         private System.Windows.Forms.Label armorClassLabel;
