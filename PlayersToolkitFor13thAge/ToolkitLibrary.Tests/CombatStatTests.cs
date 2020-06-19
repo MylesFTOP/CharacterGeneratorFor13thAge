@@ -11,7 +11,8 @@ namespace ToolkitLibrary.Tests
     {
         private readonly CombatStat combatStat = new CombatStat();
 
-        CharacterModel model = new CharacterModel("test", "test", "test", "3", "13", "16", "14", "14", "13", "19");
+        CharacterModel model = new CharacterModel() 
+        { CharacterLevel = 3 , Strength = 13, Constitution = 16, Dexterity = 14, Intelligence = 14, Wisdom = 13, Charisma = 19 };
 
         [Fact]
         public void CombatStat_ArmorClassShouldCalculate() {
