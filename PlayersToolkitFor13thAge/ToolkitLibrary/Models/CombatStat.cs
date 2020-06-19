@@ -11,21 +11,21 @@ namespace ToolkitLibrary
         public int CombatStatValue { get; private set; }
         // TODO: Add lookup for base value from character class to then pass to argument
 
-        public static int CalculateArmorClass(CharacterModel character) {
+        public int CalculateArmorClass(CharacterModel character) {
             int baseValue = 10; // Hard-coded value for Sorcerer - see todo above
 
             int armorClass = CalculateCombatStat(baseValue, character.Constitution, character.Dexterity, character.Wisdom);
             return armorClass;
         }
 
-        public static int CalculatePhysicalDefense(CharacterModel character) {
+        public int CalculatePhysicalDefense(CharacterModel character) {
             int baseValue = 11; // Hard-coded value for Sorcerer - see todo above
 
             int physicalDefense = CalculateCombatStat(baseValue, character.Strength, character.Constitution, character.Dexterity);
             return physicalDefense;
         }
 
-        public static int CalculateMentalDefense(CharacterModel character) {
+        public int CalculateMentalDefense(CharacterModel character) {
             int baseValue = 10; // Hard-coded value for Sorcerer - see todo above
 
             int mentalDefense = CalculateCombatStat(baseValue, character.Intelligence, character.Wisdom, character.Charisma);
