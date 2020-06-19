@@ -94,19 +94,18 @@ namespace FormUI
         private void UpdateCombatStats() {
             CombatStat combatStat = new CombatStat();
 
-            bool constitutionInputValid = uint.TryParse(constitutionInputBox.Text, out uint constitutionValue);
-            bool dexterityInputValid = uint.TryParse(dexterityInputBox.Text, out uint dexterityValue);
-            bool wisdomInputValid = uint.TryParse(wisdomInputBox.Text, out uint wisdomValue);
-            bool levelInputValid = uint.TryParse(characterLevelInputBox.Text, out uint characterLevel);
+            uint characterLevel = uint.TryParse(characterLevelInputBox.Text, out characterLevel) ? characterLevel : 0 ;
 
-            if ( levelInputValid )
-            {
-                if ( constitutionInputValid && dexterityInputValid && wisdomInputValid )
-                {
-                    armorClass.Text = combatStat.CalculateArmorClass(constitutionValue, dexterityValue, wisdomValue, characterLevel).ToString();
-                }
-            }
+            uint strengthValue = uint.TryParse(strengthInputBox.Text, out strengthValue) ? strengthValue : 0 ;
+            uint constitutionValue = uint.TryParse(constitutionInputBox.Text, out constitutionValue) ? constitutionValue : 0 ;
+            uint dexterityValue = uint.TryParse(dexterityInputBox.Text, out dexterityValue) ? dexterityValue : 0;
+            uint intelligenceValue = uint.TryParse(intelligenceInputBox.Text, out intelligenceValue) ? intelligenceValue : 0 ;
+            uint wisdomValue = uint.TryParse(wisdomInputBox.Text, out wisdomValue) ? wisdomValue : 0 ;
+            uint charismaValue = uint.TryParse(charismaInputBox.Text, out charismaValue) ? charismaValue : 0 ;
 
+            armorClass.Text = combatStat.CalculateArmorClass(constitutionValue, dexterityValue, wisdomValue, characterLevel).ToString();
+            physicalDefense.Text = combatStat.CalculatePhysicalDefense(strengthValue, constitutionValue, dexterityValue, characterLevel).ToString();
+            mentalDefense.Text = combatStat.CalculateMentalDefense(intelligenceValue, wisdomValue, charismaValue, characterLevel).ToString();
         }
 
         private void characterLevel_TextChanged(object sender, EventArgs e) {
