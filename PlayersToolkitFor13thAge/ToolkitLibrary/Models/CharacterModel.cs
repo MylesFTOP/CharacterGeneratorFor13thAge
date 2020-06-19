@@ -54,7 +54,7 @@ namespace ToolkitLibrary
             Charisma = ParsedUint(charisma);
         }
 
-        public uint ParsedUint(string inputString) {
+        private uint ParsedUint(string inputString) {
             uint.TryParse(inputString, out uint output);
             return output;
         }

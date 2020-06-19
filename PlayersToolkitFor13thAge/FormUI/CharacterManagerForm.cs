@@ -76,16 +76,12 @@ namespace FormUI
         private void UpdateModifiers(TextBox textBox, Label modifier, Label modifierWithLevel) {
             AbilityStat abilityStat = new AbilityStat();
 
-            uint level = m.ParsedUint(characterLevelInputBox.Text) ;
+            uint characterLevel = uint.TryParse(characterLevelInputBox.Text, out characterLevel) ? characterLevel : 0 ;
             string displayFormat = "+0;-0";
             if ( uint.TryParse(textBox.Text, out uint value) )
             {
-                modifier.Text = abilityStat
-                    .CalculateModifier(value)
-                    .ToString(displayFormat);
-                modifierWithLevel.Text = abilityStat
-                    .CalculateModifierWithLevel(value, level)
-                    .ToString(displayFormat);
+                modifier.Text = abilityStat.CalculateModifier(value).ToString(displayFormat);
+                modifierWithLevel.Text = abilityStat.CalculateModifierWithLevel(value, characterLevel).ToString(displayFormat);
             }
 
             UpdateCombatStats();
@@ -98,7 +94,7 @@ namespace FormUI
 
             uint strengthValue = uint.TryParse(strengthInputBox.Text, out strengthValue) ? strengthValue : 0 ;
             uint constitutionValue = uint.TryParse(constitutionInputBox.Text, out constitutionValue) ? constitutionValue : 0 ;
-            uint dexterityValue = uint.TryParse(dexterityInputBox.Text, out dexterityValue) ? dexterityValue : 0;
+            uint dexterityValue = uint.TryParse(dexterityInputBox.Text, out dexterityValue) ? dexterityValue : 0 ;
             uint intelligenceValue = uint.TryParse(intelligenceInputBox.Text, out intelligenceValue) ? intelligenceValue : 0 ;
             uint wisdomValue = uint.TryParse(wisdomInputBox.Text, out wisdomValue) ? wisdomValue : 0 ;
             uint charismaValue = uint.TryParse(charismaInputBox.Text, out charismaValue) ? charismaValue : 0 ;
@@ -133,7 +129,8 @@ namespace FormUI
                 .Where(x => uint.TryParse(x.Text, out uint parsedValue))
                 .ToList();
 
-            if ( textBoxes.Count != textBoxesParsable.Count ) {
+            if ( textBoxes.Count != textBoxesParsable.Count ) 
+            {
                 output = false;
             }
 
@@ -145,12 +142,12 @@ namespace FormUI
                 }
             }
 
-            uint strengthValue = m.ParsedUint(strengthInputBox.Text),
-                constitutionValue = m.ParsedUint(constitutionInputBox.Text),
-                dexterityValue = m.ParsedUint(dexterityInputBox.Text),
-                wisdomValue = m.ParsedUint(wisdomInputBox.Text),
-                intelligenceValue = m.ParsedUint(intelligenceInputBox.Text),
-                charismaValue = m.ParsedUint(charismaInputBox.Text);
+            uint strengthValue = uint.TryParse(strengthInputBox.Text, out strengthValue) ? strengthValue : 0 ;
+            uint constitutionValue = uint.TryParse(constitutionInputBox.Text, out constitutionValue) ? constitutionValue : 0 ;
+            uint dexterityValue = uint.TryParse(dexterityInputBox.Text, out dexterityValue) ? dexterityValue : 0 ;
+            uint wisdomValue = uint.TryParse(wisdomInputBox.Text, out wisdomValue) ? wisdomValue : 0 ;
+            uint intelligenceValue = uint.TryParse(intelligenceInputBox.Text, out intelligenceValue) ? intelligenceValue : 0 ;
+            uint charismaValue = uint.TryParse(charismaInputBox.Text, out charismaValue) ? charismaValue : 0 ;
 
             List<uint> inputValues = new List<uint> {
                 strengthValue,
