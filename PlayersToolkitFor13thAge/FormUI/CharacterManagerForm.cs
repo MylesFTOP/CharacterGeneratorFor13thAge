@@ -15,6 +15,8 @@ namespace FormUI
     {
         CharacterModel m = new CharacterModel();
 
+        string defaultDisplayValue = "<0>";
+
         public CharacterManagerForm() {
             InitializeComponent();
         }
@@ -76,12 +78,19 @@ namespace FormUI
         private void UpdateModifiers(TextBox textBox, Label modifier, Label modifierWithLevel) {
             AbilityStat abilityStat = new AbilityStat();
 
-            uint characterLevel = uint.TryParse(characterLevelInputBox.Text, out characterLevel) ? characterLevel : 0 ;
             string displayFormat = "+0;-0";
+
+            uint characterLevel = uint.TryParse(characterLevelInputBox.Text, out characterLevel) ? characterLevel : 0 ;
+
             if ( uint.TryParse(textBox.Text, out uint value) )
             {
                 modifier.Text = abilityStat.CalculateModifier(value).ToString(displayFormat);
                 modifierWithLevel.Text = abilityStat.CalculateModifierWithLevel(value, characterLevel).ToString(displayFormat);
+            }
+            else
+            {
+                modifier.Text = defaultDisplayValue;
+                modifierWithLevel.Text = defaultDisplayValue;
             }
 
             UpdateCombatStats();
@@ -92,16 +101,21 @@ namespace FormUI
 
             uint characterLevel = uint.TryParse(characterLevelInputBox.Text, out characterLevel) ? characterLevel : 0 ;
 
-            uint strengthValue = uint.TryParse(strengthInputBox.Text, out strengthValue) ? strengthValue : 0 ;
-            uint constitutionValue = uint.TryParse(constitutionInputBox.Text, out constitutionValue) ? constitutionValue : 0 ;
-            uint dexterityValue = uint.TryParse(dexterityInputBox.Text, out dexterityValue) ? dexterityValue : 0 ;
-            uint intelligenceValue = uint.TryParse(intelligenceInputBox.Text, out intelligenceValue) ? intelligenceValue : 0 ;
-            uint wisdomValue = uint.TryParse(wisdomInputBox.Text, out wisdomValue) ? wisdomValue : 0 ;
-            uint charismaValue = uint.TryParse(charismaInputBox.Text, out charismaValue) ? charismaValue : 0 ;
+            bool strengthValueValid = uint.TryParse(strengthInputBox.Text, out uint strengthValue);
+            bool constitutionValueValid = uint.TryParse(constitutionInputBox.Text, out uint constitutionValue);
+            bool dexterityValueValid = uint.TryParse(dexterityInputBox.Text, out uint dexterityValue);
+            bool intelligenceValueValid = uint.TryParse(intelligenceInputBox.Text, out uint intelligenceValue);
+            bool wisdomValueValid = uint.TryParse(wisdomInputBox.Text, out uint wisdomValue);
+            bool charismaValueValid = uint.TryParse(charismaInputBox.Text, out uint charismaValue);
 
-            armorClass.Text = combatStat.CalculateArmorClass(constitutionValue, dexterityValue, wisdomValue, characterLevel).ToString();
-            physicalDefense.Text = combatStat.CalculatePhysicalDefense(strengthValue, constitutionValue, dexterityValue, characterLevel).ToString();
-            mentalDefense.Text = combatStat.CalculateMentalDefense(intelligenceValue, wisdomValue, charismaValue, characterLevel).ToString();
+            armorClass.Text = ( constitutionValueValid || dexterityValueValid || wisdomValueValid ) ? 
+                combatStat.CalculateArmorClass(constitutionValue, dexterityValue, wisdomValue, characterLevel).ToString() : defaultDisplayValue ;
+
+            physicalDefense.Text = ( strengthValueValid || constitutionValueValid || dexterityValueValid ) ? 
+                combatStat.CalculatePhysicalDefense(strengthValue, constitutionValue, dexterityValue, characterLevel).ToString() : defaultDisplayValue ;
+            
+            mentalDefense.Text = ( intelligenceValueValid || wisdomValueValid || charismaValueValid ) ?
+                combatStat.CalculateMentalDefense(intelligenceValue, wisdomValue, charismaValue, characterLevel).ToString() : defaultDisplayValue ;
         }
 
         private void characterLevel_TextChanged(object sender, EventArgs e) {
@@ -114,7 +128,7 @@ namespace FormUI
         }
 
         private bool ValidateInput() {
-            bool output = true;
+            bool inputIsValid = true;
 
             List<TextBox> textBoxes = new List<TextBox> {
                 strengthInputBox,
@@ -131,14 +145,14 @@ namespace FormUI
 
             if ( textBoxes.Count != textBoxesParsable.Count ) 
             {
-                output = false;
+                inputIsValid = false;
             }
 
             foreach ( var textBox in textBoxes )
             {
                 if ( textBox.TextLength == 0 )
                 {
-                    output = false;
+                    inputIsValid = false;
                 }
             }
 
@@ -162,15 +176,15 @@ namespace FormUI
             {
                 if ( inputValue < 1 )
                 {
-                    output = false;
+                    inputIsValid = false;
                 }
             }
             
             if ( characterName.TextLength == 0 || characterClass.TextLength == 0 || characterRace.TextLength == 0 || characterLevelInputBox.TextLength == 0 ) {
-                output = false;
+                inputIsValid = false;
             }
 
-            return output;
+            return inputIsValid;
         }
     }
 }
