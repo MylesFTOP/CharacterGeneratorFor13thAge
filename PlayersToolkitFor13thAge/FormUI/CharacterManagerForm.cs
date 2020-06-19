@@ -67,26 +67,10 @@ namespace FormUI
 
         private void wisdomInputBox_TextChanged(object sender, EventArgs e) {
             UpdateModifiers(wisdomInputBox, wisdomModifier, wisdomModifierWithLevel);
-
-
         }
 
         private void charismaInputBox_TextChanged(object sender, EventArgs e) {
             UpdateModifiers(charismaInputBox, charismaModifier, charismaModifierWithLevel);
-
-            CombatStat combatStat = new CombatStat();
-
-            uint level = m.ParsedUint(characterLevelInputBox.Text);
-
-            bool constitutionInputValid = uint.TryParse(constitutionInputBox.Text, out uint constitutionValue);
-            bool dexterityInputValid = uint.TryParse(dexterityInputBox.Text, out uint dexterityValue);
-            bool wisdomInputValid = uint.TryParse(wisdomInputBox.Text, out uint wisdomValue);
-            bool levelInputValid = uint.TryParse(characterLevelInputBox.Text, out uint characterLevel);
-
-            if ( constitutionInputValid && dexterityInputValid && wisdomInputValid && levelInputValid )
-            {
-                armorClass.Text = combatStat.CalculateCombatStat(10, constitutionValue, dexterityValue, wisdomValue, characterLevel).ToString();
-            }
         }
 
         private void UpdateModifiers(TextBox textBox, Label modifier, Label modifierWithLevel) {
@@ -103,12 +87,25 @@ namespace FormUI
                     .CalculateModifierWithLevel(value, level)
                     .ToString(displayFormat);
             }
+
+            UpdateCombatStats();
         }
 
         private void UpdateCombatStats() {
             CombatStat combatStat = new CombatStat();
 
-            uint level = m.ParsedUint(characterLevelInputBox.Text);
+            bool constitutionInputValid = uint.TryParse(constitutionInputBox.Text, out uint constitutionValue);
+            bool dexterityInputValid = uint.TryParse(dexterityInputBox.Text, out uint dexterityValue);
+            bool wisdomInputValid = uint.TryParse(wisdomInputBox.Text, out uint wisdomValue);
+            bool levelInputValid = uint.TryParse(characterLevelInputBox.Text, out uint characterLevel);
+
+            if ( levelInputValid )
+            {
+                if ( constitutionInputValid && dexterityInputValid && wisdomInputValid )
+                {
+                    armorClass.Text = combatStat.CalculateArmorClass(constitutionValue, dexterityValue, wisdomValue, characterLevel).ToString();
+                }
+            }
 
         }
 

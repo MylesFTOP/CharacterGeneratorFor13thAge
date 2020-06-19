@@ -11,28 +11,28 @@ namespace ToolkitLibrary
         public int CombatStatValue { get; private set; }
         // TODO: Add lookup for base value from character class to then pass to argument
 
-        public int CalculateArmorClass(CharacterModel character) {
+        public int CalculateArmorClass(uint constitution, uint dexterity, uint wisdom, uint characterLevel) {
             int baseValue = 10; // Hard-coded value for Sorcerer - see todo above
 
-            int armorClass = CalculateCombatStat(baseValue, character.Constitution, character.Dexterity, character.Wisdom, character.CharacterLevel);
+            int armorClass = CalculateCombatStat(baseValue, constitution, dexterity, wisdom, characterLevel);
             return armorClass;
         }
 
-        public int CalculatePhysicalDefense(CharacterModel character) {
+        public int CalculatePhysicalDefense(uint strength, uint constitution, uint dexterity, uint characterLevel) {
             int baseValue = 11; // Hard-coded value for Sorcerer - see todo above
 
-            int physicalDefense = CalculateCombatStat(baseValue, character.Strength, character.Constitution, character.Dexterity, character.CharacterLevel);
+            int physicalDefense = CalculateCombatStat(baseValue, strength, constitution, dexterity, characterLevel);
             return physicalDefense;
         }
 
-        public int CalculateMentalDefense(CharacterModel character) {
+        public int CalculateMentalDefense(uint intelligence, uint wisdom, uint charisma, uint characterLevel) {
             int baseValue = 10; // Hard-coded value for Sorcerer - see todo above
 
-            int mentalDefense = CalculateCombatStat(baseValue, character.Intelligence, character.Wisdom, character.Charisma, character.CharacterLevel);
+            int mentalDefense = CalculateCombatStat(baseValue, intelligence, wisdom, charisma, characterLevel);
             return mentalDefense;
         }
 
-        public int CalculateCombatStat(int classBaseValue, uint firstAbilityStat, uint secondAbilityStat, uint thirdAbilityStat, uint characterLevel) {
+        private static int CalculateCombatStat(int classBaseValue, uint firstAbilityStat, uint secondAbilityStat, uint thirdAbilityStat, uint characterLevel) {
             AbilityStat a = new AbilityStat();
             
             uint[] abilityStats = { firstAbilityStat, secondAbilityStat, thirdAbilityStat };
