@@ -75,6 +75,15 @@ namespace FormUI
             UpdateModifiers(charismaInputBox, charismaModifier, charismaModifierWithLevel);
         }
 
+        private void characterLevel_TextChanged(object sender, EventArgs e) {
+            UpdateModifiers(strengthInputBox, strengthModifier, strengthModifierWithLevel);
+            UpdateModifiers(constitutionInputBox, constitutionModifier, constitutionModifierWithLevel);
+            UpdateModifiers(dexterityInputBox, dexterityModifier, dexterityModifierWithLevel);
+            UpdateModifiers(intelligenceInputBox, intelligenceModifier, intelligenceModifierWithLevel);
+            UpdateModifiers(wisdomInputBox, wisdomModifier, wisdomModifierWithLevel);
+            UpdateModifiers(charismaInputBox, charismaModifier, charismaModifierWithLevel);
+        }
+
         private void UpdateModifiers(TextBox textBox, Label modifier, Label modifierWithLevel) {
             AbilityStat abilityStat = new AbilityStat();
 
@@ -123,16 +132,8 @@ namespace FormUI
             bool characterLevelValid = uint.TryParse(characterLevelInputBox.Text, out uint characterLevel);
             bool constitutionValueValid = uint.TryParse(constitutionInputBox.Text, out uint constitutionValue);
 
-            hitPoints.Text = (characterLevelValid || constitutionValueValid) ? m.CalculateHitPoints(constitutionValue, characterLevel).ToString() : defaultDisplayValue ;
-        }
-
-        private void characterLevel_TextChanged(object sender, EventArgs e) {
-            UpdateModifiers(strengthInputBox, strengthModifier, strengthModifierWithLevel);
-            UpdateModifiers(constitutionInputBox, constitutionModifier, constitutionModifierWithLevel);
-            UpdateModifiers(dexterityInputBox, dexterityModifier, dexterityModifierWithLevel);
-            UpdateModifiers(intelligenceInputBox, intelligenceModifier, intelligenceModifierWithLevel);
-            UpdateModifiers(wisdomInputBox, wisdomModifier, wisdomModifierWithLevel);
-            UpdateModifiers(charismaInputBox, charismaModifier, charismaModifierWithLevel);
+            hitPoints.Text = (characterLevelValid || constitutionValueValid) ?
+                m.CalculateHitPoints(constitutionValue, characterLevel).ToString() : defaultDisplayValue ;
         }
 
         private bool ValidateInput() {
