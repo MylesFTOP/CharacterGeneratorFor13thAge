@@ -94,6 +94,7 @@ namespace FormUI
             }
 
             UpdateCombatStats();
+            UpdateHitPoints();
         }
 
         private void UpdateCombatStats() {
@@ -116,6 +117,13 @@ namespace FormUI
             
             mentalDefense.Text = ( intelligenceValueValid || wisdomValueValid || charismaValueValid ) ?
                 combatStat.CalculateMentalDefense(intelligenceValue, wisdomValue, charismaValue, characterLevel).ToString() : defaultDisplayValue ;
+        }
+
+        private void UpdateHitPoints() {
+            bool characterLevelValid = uint.TryParse(characterLevelInputBox.Text, out uint characterLevel);
+            bool constitutionValueValid = uint.TryParse(constitutionInputBox.Text, out uint constitutionValue);
+
+            hitPoints.Text = (characterLevelValid || constitutionValueValid) ? m.CalculateHitPoints(constitutionValue, characterLevel).ToString() : defaultDisplayValue ;
         }
 
         private void characterLevel_TextChanged(object sender, EventArgs e) {
