@@ -38,7 +38,8 @@ namespace FormUI
                     dexterityInputBox.Text,
                     intelligenceInputBox.Text,
                     wisdomInputBox.Text,
-                    charismaInputBox.Text);
+                    charismaInputBox.Text,
+                    hitPoints.Text);
 
                 foreach ( IDataConnection connection in GlobalConfig.Connections )
                 {

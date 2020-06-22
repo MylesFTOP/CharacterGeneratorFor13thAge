@@ -21,7 +21,7 @@ namespace ToolkitLibrary
         //public CombatStat ArmorClass { get; private set; } = new CombatStat();
         //public CombatStat PhysicalDefense { get; private set; } = new CombatStat();
         //public CombatStat MentalDefense { get; private set; } = new CombatStat();
-        //public int HitPoints { get; private set; }
+        public int CurrentHitPoints { get; private set; }
         //public int Recoveries { get; private set; }
         //public string RecoveryDice { get; private set; }
         //public List<string> IconRelationships { get; set; }
@@ -37,7 +37,7 @@ namespace ToolkitLibrary
         }
 
         public CharacterModel(string characterName, string characterClass, string characterRace, string characterLevel,
-            string strength, string constitution, string dexterity, string wisdom, string intelligence, string charisma) {
+            string strength, string constitution, string dexterity, string wisdom, string intelligence, string charisma, string currentHitPoints) {
             // TODO: Add logic for identifying users
             PlayerID = 21;
 
@@ -52,6 +52,7 @@ namespace ToolkitLibrary
             Wisdom = ParsedUint(wisdom);
             Intelligence = ParsedUint(intelligence);
             Charisma = ParsedUint(charisma);
+            CurrentHitPoints = int.Parse(currentHitPoints);
         }
 
         private uint ParsedUint(string inputString) {
