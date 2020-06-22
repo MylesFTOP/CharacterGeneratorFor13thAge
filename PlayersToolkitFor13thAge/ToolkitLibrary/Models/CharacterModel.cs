@@ -18,7 +18,7 @@ namespace ToolkitLibrary
         public uint Wisdom { get; set; }
         public uint Intelligence { get; set; }
         public uint Charisma { get; set; }
-        public int CurrentHitPoints { get; private set; }
+        public int CurrentHitPoints { get; set; }
         //public CombatStat ArmorClass { get; private set; } = new CombatStat();
         //public CombatStat PhysicalDefense { get; private set; } = new CombatStat();
         //public CombatStat MentalDefense { get; private set; } = new CombatStat();
@@ -58,10 +58,10 @@ namespace ToolkitLibrary
         public uint CalculateHitPoints (uint constitution, uint characterLevel) { 
             AbilityStat a = new AbilityStat();
 
-            // TODO: Class lookups for Hit Points
+            // TODO: Add lookup for base value and  for Hit Points
             uint baseValue = 6; // default value for sorcerer - will need to look up against class
-            uint levelModifier = characterLevel + 2; // Only correct up to level 4 - will need to look up against class and level
-            uint hitPoints = (uint)(baseValue + a.CalculateModifier(constitution)) * levelModifier;
+            uint levelMultiplier = characterLevel + 2; // Only correct up to level 4 - will need to look up against class and level
+            uint hitPoints = (uint)(baseValue + a.CalculateModifier(constitution)) * levelMultiplier;
             return hitPoints;
         }
     }
