@@ -65,8 +65,7 @@ namespace ToolkitLibrary
 
             uint baseValue = 6; // default value for sorcerer - will need to look up against class
             uint levelModifier = characterLevel + 2; // Only correct up to level 4 - will need to look up against class and level
-            var baseValueWithModifier = baseValue + a.CalculateModifier(constitution);
-            uint hitPoints = (uint)baseValueWithModifier * levelModifier;
+            uint hitPoints = (uint)(baseValue + a.CalculateModifier(constitution)) * levelModifier;
             return hitPoints;
         }
     }
