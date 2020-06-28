@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ToolkitLibrary
 {
     public class CharacterGenerator
     {
-        Random rand = new Random();
+        readonly Random rand = new Random();
 
-        public uint generateRandomAbilityStat() {
+        public uint GenerateRandomAbilityStat() {
             uint randomAbilityStat = (uint)rand.Next(5,20);
             return randomAbilityStat;
         }
