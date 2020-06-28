@@ -13,7 +13,9 @@ namespace ToolkitLibrary
         }
 
         public uint RollAbilityStat() {
-            uint diceValue = RollDice(2, 6);
+            uint diceValue = RollD6();
+            if ( diceValue == 1 )
+               { diceValue = RollD6(); }
             return diceValue;
         }
 
