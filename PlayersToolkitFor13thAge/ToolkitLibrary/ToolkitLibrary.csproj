@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacterGenerator.cs" />
     <Compile Include="DataAccess\TextConnectorProcessor.cs" />
     <Compile Include="Models\AbilityStat.cs" />
     <Compile Include="Models\CombatStat.cs" />
