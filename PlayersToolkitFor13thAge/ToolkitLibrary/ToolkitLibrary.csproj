@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="CharacterGenerator.cs" />
     <Compile Include="DataAccess\TextConnectorProcessor.cs" />
+    <Compile Include="Dice.cs" />
     <Compile Include="Models\AbilityStat.cs" />
     <Compile Include="Models\CombatStat.cs" />
     <Compile Include="Models\CampaignModel.cs" />
