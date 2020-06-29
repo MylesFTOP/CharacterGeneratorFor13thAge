@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ToolkitLibrary
 {
@@ -7,10 +9,13 @@ namespace ToolkitLibrary
         readonly Random rand = new Random();
 
         public uint GenerateRandomAbilityStat() {
-            // TODO: Change to use Dice.RollAbilityStat() 4 times and drop the lowest
-            uint randomAbilityStat = (uint)rand.Next(5,20);
+            Dice dice = new Dice();
+            List<int> abilityStatRolls = new List<int>()
+                { (int)dice.RollAbilityStat(), (int)dice.RollAbilityStat() , (int)dice.RollAbilityStat() , (int)dice.RollAbilityStat() };
+            abilityStatRolls.Sort();
+            abilityStatRolls.RemoveAt(0);
+            uint randomAbilityStat = (uint)abilityStatRolls.Sum();
             return randomAbilityStat;
         }
-
     }
 }
