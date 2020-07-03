@@ -84,7 +84,7 @@ namespace FormUI
             AbilityStat abilityStat = new AbilityStat();
 
             string displayFormat = "+0;-0";
-
+            // TODO: Extract this duplicate code for input box parsing
             uint characterLevel = uint.TryParse(characterLevelInputBox.Text, out characterLevel) ? characterLevel : 0 ;
 
             if ( uint.TryParse(textBox.Text, out uint value) )
@@ -104,7 +104,7 @@ namespace FormUI
 
         private void UpdateCombatStats() {
             CombatStat combatStat = new CombatStat();
-
+            // TODO: Extract this duplicate code for input box parsing
             uint characterLevel = uint.TryParse(characterLevelInputBox.Text, out characterLevel) ? characterLevel : 0 ;
 
             bool strengthValueValid = uint.TryParse(strengthInputBox.Text, out uint strengthValue);
@@ -160,7 +160,8 @@ namespace FormUI
                     inputIsValid = false;
                 }
             }
-
+            
+            // TODO: Extract this duplicate code for input box parsing
             uint strengthValue = uint.TryParse(strengthInputBox.Text, out strengthValue) ? strengthValue : 0 ;
             uint constitutionValue = uint.TryParse(constitutionInputBox.Text, out constitutionValue) ? constitutionValue : 0 ;
             uint dexterityValue = uint.TryParse(dexterityInputBox.Text, out dexterityValue) ? dexterityValue : 0 ;
