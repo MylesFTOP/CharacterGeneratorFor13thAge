@@ -6,10 +6,9 @@ namespace ToolkitLibrary
 {
     public class CharacterGenerator
     {
-        readonly Random rand = new Random();
+        readonly Dice dice = Factory.CreateDice();
 
         public uint GenerateRandomAbilityStat() {
-            Dice dice = new Dice();
             List<int> abilityStatRolls = new List<int>()
                 { (int)dice.RollAbilityStat(), (int)dice.RollAbilityStat() , (int)dice.RollAbilityStat() , (int)dice.RollAbilityStat() };
             abilityStatRolls.Sort();

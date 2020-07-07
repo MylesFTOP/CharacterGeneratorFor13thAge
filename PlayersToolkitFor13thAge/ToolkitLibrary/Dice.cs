@@ -4,11 +4,16 @@ namespace ToolkitLibrary
 {
     public class Dice
     {
+        readonly Random _random;
+
         public uint DiceRoll { get; private set; }
 
+        public Dice(Random random) {
+            _random = random;
+        }
+
         private uint RollDice(int minimumValue, int maximumValue) {
-            Random random = new Random();
-            uint diceValue = (uint)random.Next(minimumValue, maximumValue);
+            uint diceValue = (uint)_random.Next(minimumValue, maximumValue);
             return diceValue;
         }
 
