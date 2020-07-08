@@ -14,5 +14,17 @@ namespace ToolkitLibrary
         public static Random CreateRandom() {
             return new Random();
         }
+
+        public static CharacterModel CreateCharacterModel() {
+            return new CharacterModel();
+        }
+
+        public static AbilityStat CreateAbilityStat() {
+            return new AbilityStat();
+        }
+
+        public static CombatStat CreateCombatStat() {
+            return new CombatStat();
+        }
     }
 }

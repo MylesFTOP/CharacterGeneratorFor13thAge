@@ -8,7 +8,7 @@ namespace FormUI
 {
     public partial class CharacterManagerForm : Form
     {
-        CharacterModel m = new CharacterModel();
+        CharacterModel m = Factory.CreateCharacterModel();
 
         string defaultDisplayValue = "<0>";
 
@@ -81,7 +81,7 @@ namespace FormUI
         }
 
         private void UpdateModifiers(TextBox textBox, Label modifier, Label modifierWithLevel) {
-            AbilityStat abilityStat = new AbilityStat();
+            AbilityStat abilityStat = Factory.CreateAbilityStat();
 
             string displayFormat = "+0;-0";
             // TODO: Extract this duplicate code for input box parsing
@@ -103,7 +103,7 @@ namespace FormUI
         }
 
         private void UpdateCombatStats() {
-            CombatStat combatStat = new CombatStat();
+            CombatStat combatStat = Factory.CreateCombatStat();
             // TODO: Extract this duplicate code for input box parsing
             uint characterLevel = uint.TryParse(characterLevelInputBox.Text, out characterLevel) ? characterLevel : 0 ;
 
