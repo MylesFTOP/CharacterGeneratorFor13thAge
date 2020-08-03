@@ -18,4 +18,6 @@ jobs:
     - name: Build
       run: dotnet build ./PlayersToolkitFor13thAge --configuration Release
     - name: Test
-      run: dotnet test ./PlayersToolkitFor13thAge --no-restore --verbosity normal
+      run: dotnet test ./PlayersToolkitFor13thAge --settings "./.github/coverlet.runsettings" /p:CollectCoverage=true
+    - name: Push coverage report to codecov
+      uses: codecov/codecov-action@v1
