@@ -11,10 +11,11 @@ namespace ToolkitLibrary.Tests
     {
         private readonly CharacterModel characterModel = new CharacterModel();
 
-        [Fact]
-        public void CharacterModel_HitPointsShouldCalculate() {
-            uint expectedValue = 45;
-            uint actualValue = characterModel.CalculateHitPoints(16,3);
+        [Theory]
+        [InlineData(45, 16, 3)]
+        [InlineData(36, 16, 2)]
+        public void CharacterModel_HitPointsShouldCalculate(uint expectedValue, uint constitution, uint characterLevel) {
+            uint actualValue = characterModel.CalculateHitPoints(constitution, characterLevel);
             Assert.Equal(expectedValue, actualValue);
         }
     }
