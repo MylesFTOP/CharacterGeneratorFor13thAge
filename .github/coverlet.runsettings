@@ -5,6 +5,7 @@
       <DataCollector friendlyName="XPlat code coverage">
         <Configuration>
           <Format>opencover</Format>
+          <Exclude>[FormUI]*</Exclude>
         </Configuration>
       </DataCollector>
     </DataCollectors>
