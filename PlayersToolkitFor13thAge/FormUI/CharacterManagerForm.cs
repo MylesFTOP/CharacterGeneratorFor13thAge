@@ -160,14 +160,14 @@ namespace FormUI
                     inputIsValid = false;
                 }
             }
-            
+
             // TODO: Extract this duplicate code for input box parsing
-            uint strengthValue = InputHandler.ValidateValueAsUint(strengthInputBox.Text, out strengthValue) ? strengthValue : 0 ;
-            uint constitutionValue = InputHandler.ValidateValueAsUint(constitutionInputBox.Text, out constitutionValue) ? constitutionValue : 0 ;
-            uint dexterityValue = InputHandler.ValidateValueAsUint(dexterityInputBox.Text, out dexterityValue) ? dexterityValue : 0 ;
-            uint wisdomValue = InputHandler.ValidateValueAsUint(wisdomInputBox.Text, out wisdomValue) ? wisdomValue : 0 ;
-            uint intelligenceValue = InputHandler.ValidateValueAsUint(intelligenceInputBox.Text, out intelligenceValue) ? intelligenceValue : 0 ;
-            uint charismaValue = InputHandler.ValidateValueAsUint(charismaInputBox.Text, out charismaValue) ? charismaValue : 0 ;
+            bool strengthValueValid = InputHandler.ValidateValueAsUint(strengthInputBox.Text, out uint strengthValue);
+            bool constitutionValueValid = InputHandler.ValidateValueAsUint(constitutionInputBox.Text, out uint constitutionValue);
+            bool dexterityValueValid = InputHandler.ValidateValueAsUint(dexterityInputBox.Text, out uint dexterityValue);
+            bool intelligenceValueValid = InputHandler.ValidateValueAsUint(intelligenceInputBox.Text, out uint intelligenceValue);
+            bool wisdomValueValid = InputHandler.ValidateValueAsUint(wisdomInputBox.Text, out uint wisdomValue);
+            bool charismaValueValid = InputHandler.ValidateValueAsUint(charismaInputBox.Text, out uint charismaValue);
 
             List<uint> inputValues = new List<uint> {
                 strengthValue,
