@@ -58,6 +58,7 @@
     <Compile Include="DataAccess\SQLConnector.cs" />
     <Compile Include="DataAccess\TextConnector.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Services\InputHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
