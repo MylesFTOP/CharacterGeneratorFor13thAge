@@ -8,13 +8,13 @@ namespace ToolkitLibrary
 {
     public static class InputHandler
     {
-        public static bool ValidateValueAsInt(string stringInput, out int result) {
+        public static bool ParseInt(string stringInput, out int result) {
             bool output = int.TryParse(stringInput, out result);
             return output;
         }
 
-        public static bool ValidateNonNegativeInt(string stringInput, out int result) {
-            bool output = ValidateValueAsInt(stringInput, out result);
+        public static bool ParseNonNegativeInt(string stringInput, out int result) {
+            bool output = ParseInt(stringInput, out result);
 
             if (result < 0)
             {
@@ -24,7 +24,7 @@ namespace ToolkitLibrary
             return output;
         }
         
-        public static bool ValidateValueAsUint(string stringInput, out uint result) {
+        public static bool ParseUint(string stringInput, out uint result) {
             bool output = uint.TryParse(stringInput, out result);
             return output;
         }
