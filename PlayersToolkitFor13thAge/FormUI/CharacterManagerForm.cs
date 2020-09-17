@@ -86,12 +86,17 @@ namespace FormUI
 
             string displayFormat = "+0;-0";
             // TODO: Extract this duplicate code for input box parsing
-            uint characterLevel = InputHandler.ParseUint(characterLevelInputBox.Text, out characterLevel) ? characterLevel : 0 ;
+            bool characterLevelValid = InputHandler.ParseUint(characterLevelInputBox.Text, out uint characterLevel);
 
             if ( InputHandler.ParseUint(textBox.Text, out uint value) )
             {
-                modifier.Text = abilityStat.CalculateModifier(value).ToString(displayFormat);
-                modifierWithLevel.Text = abilityStat.CalculateModifierWithLevel(value, characterLevel).ToString(displayFormat);
+                modifier.Text = abilityStat
+                    .CalculateModifier(value)
+                    .ToString(displayFormat);
+
+                modifierWithLevel.Text = abilityStat
+                    .CalculateModifierWithLevel(value, characterLevel)
+                    .ToString(displayFormat);
             }
             else
             {
@@ -105,7 +110,7 @@ namespace FormUI
 
         private void UpdateCombatStats() {
             // TODO: Extract this duplicate code for input box parsing
-            uint characterLevel = InputHandler.ParseUint(characterLevelInputBox.Text, out characterLevel) ? characterLevel : 0 ;
+            bool characterLevelValid = InputHandler.ParseUint(characterLevelInputBox.Text, out uint characterLevel);
 
             bool strengthValueValid = InputHandler.ParseUint(strengthInputBox.Text, out uint strengthValue);
             bool constitutionValueValid = InputHandler.ParseUint(constitutionInputBox.Text, out uint constitutionValue);
@@ -114,13 +119,13 @@ namespace FormUI
             bool wisdomValueValid = InputHandler.ParseUint(wisdomInputBox.Text, out uint wisdomValue);
             bool charismaValueValid = InputHandler.ParseUint(charismaInputBox.Text, out uint charismaValue);
 
-            armorClass.Text = ( constitutionValueValid || dexterityValueValid || wisdomValueValid ) ? 
+            armorClass.Text = ( constitutionValueValid || dexterityValueValid || wisdomValueValid || characterLevelValid ) ? 
                 combatStat.CalculateArmorClass(constitutionValue, dexterityValue, wisdomValue, characterLevel).ToString() : defaultDisplayValue ;
 
-            physicalDefense.Text = ( strengthValueValid || constitutionValueValid || dexterityValueValid ) ? 
+            physicalDefense.Text = ( strengthValueValid || constitutionValueValid || dexterityValueValid || characterLevelValid ) ? 
                 combatStat.CalculatePhysicalDefense(strengthValue, constitutionValue, dexterityValue, characterLevel).ToString() : defaultDisplayValue ;
             
-            mentalDefense.Text = ( intelligenceValueValid || wisdomValueValid || charismaValueValid ) ?
+            mentalDefense.Text = ( intelligenceValueValid || wisdomValueValid || charismaValueValid || characterLevelValid ) ?
                 combatStat.CalculateMentalDefense(intelligenceValue, wisdomValue, charismaValue, characterLevel).ToString() : defaultDisplayValue ;
         }
 
