@@ -86,9 +86,9 @@ namespace FormUI
 
             string displayFormat = "+0;-0";
             // TODO: Extract this duplicate code for input box parsing
-            uint characterLevel = InputHandler.ValidateValueAsUint(characterLevelInputBox.Text, out characterLevel) ? characterLevel : 0 ;
+            uint characterLevel = InputHandler.ParseUint(characterLevelInputBox.Text, out characterLevel) ? characterLevel : 0 ;
 
-            if ( InputHandler.ValidateValueAsUint(textBox.Text, out uint value) )
+            if ( InputHandler.ParseUint(textBox.Text, out uint value) )
             {
                 modifier.Text = abilityStat.CalculateModifier(value).ToString(displayFormat);
                 modifierWithLevel.Text = abilityStat.CalculateModifierWithLevel(value, characterLevel).ToString(displayFormat);
@@ -105,14 +105,14 @@ namespace FormUI
 
         private void UpdateCombatStats() {
             // TODO: Extract this duplicate code for input box parsing
-            uint characterLevel = InputHandler.ValidateValueAsUint(characterLevelInputBox.Text, out characterLevel) ? characterLevel : 0 ;
+            uint characterLevel = InputHandler.ParseUint(characterLevelInputBox.Text, out characterLevel) ? characterLevel : 0 ;
 
-            bool strengthValueValid = InputHandler.ValidateValueAsUint(strengthInputBox.Text, out uint strengthValue);
-            bool constitutionValueValid = InputHandler.ValidateValueAsUint(constitutionInputBox.Text, out uint constitutionValue);
-            bool dexterityValueValid = InputHandler.ValidateValueAsUint(dexterityInputBox.Text, out uint dexterityValue);
-            bool intelligenceValueValid = InputHandler.ValidateValueAsUint(intelligenceInputBox.Text, out uint intelligenceValue);
-            bool wisdomValueValid = InputHandler.ValidateValueAsUint(wisdomInputBox.Text, out uint wisdomValue);
-            bool charismaValueValid = InputHandler.ValidateValueAsUint(charismaInputBox.Text, out uint charismaValue);
+            bool strengthValueValid = InputHandler.ParseUint(strengthInputBox.Text, out uint strengthValue);
+            bool constitutionValueValid = InputHandler.ParseUint(constitutionInputBox.Text, out uint constitutionValue);
+            bool dexterityValueValid = InputHandler.ParseUint(dexterityInputBox.Text, out uint dexterityValue);
+            bool intelligenceValueValid = InputHandler.ParseUint(intelligenceInputBox.Text, out uint intelligenceValue);
+            bool wisdomValueValid = InputHandler.ParseUint(wisdomInputBox.Text, out uint wisdomValue);
+            bool charismaValueValid = InputHandler.ParseUint(charismaInputBox.Text, out uint charismaValue);
 
             armorClass.Text = ( constitutionValueValid || dexterityValueValid || wisdomValueValid ) ? 
                 combatStat.CalculateArmorClass(constitutionValue, dexterityValue, wisdomValue, characterLevel).ToString() : defaultDisplayValue ;
@@ -125,8 +125,8 @@ namespace FormUI
         }
 
         private void UpdateHitPoints() {
-            bool characterLevelValid = InputHandler.ValidateValueAsUint(characterLevelInputBox.Text, out uint characterLevel);
-            bool constitutionValueValid = InputHandler.ValidateValueAsUint(constitutionInputBox.Text, out uint constitutionValue);
+            bool characterLevelValid = InputHandler.ParseUint(characterLevelInputBox.Text, out uint characterLevel);
+            bool constitutionValueValid = InputHandler.ParseUint(constitutionInputBox.Text, out uint constitutionValue);
 
             hitPoints.Text = (characterLevelValid || constitutionValueValid) ?
                 model.CalculateHitPoints(constitutionValue, characterLevel).ToString() : defaultDisplayValue ;
@@ -145,7 +145,7 @@ namespace FormUI
             };
 
             List<TextBox> textBoxesParsable = textBoxes
-                .Where(x => InputHandler.ValidateValueAsUint(x.Text, out uint parsedValue))
+                .Where(x => InputHandler.ParseUint(x.Text, out uint parsedValue))
                 .ToList();
 
             if ( textBoxes.Count != textBoxesParsable.Count ) 
@@ -162,12 +162,12 @@ namespace FormUI
             }
 
             // TODO: Extract this duplicate code for input box parsing
-            bool strengthValueValid = InputHandler.ValidateValueAsUint(strengthInputBox.Text, out uint strengthValue);
-            bool constitutionValueValid = InputHandler.ValidateValueAsUint(constitutionInputBox.Text, out uint constitutionValue);
-            bool dexterityValueValid = InputHandler.ValidateValueAsUint(dexterityInputBox.Text, out uint dexterityValue);
-            bool intelligenceValueValid = InputHandler.ValidateValueAsUint(intelligenceInputBox.Text, out uint intelligenceValue);
-            bool wisdomValueValid = InputHandler.ValidateValueAsUint(wisdomInputBox.Text, out uint wisdomValue);
-            bool charismaValueValid = InputHandler.ValidateValueAsUint(charismaInputBox.Text, out uint charismaValue);
+            bool strengthValueValid = InputHandler.ParseUint(strengthInputBox.Text, out uint strengthValue);
+            bool constitutionValueValid = InputHandler.ParseUint(constitutionInputBox.Text, out uint constitutionValue);
+            bool dexterityValueValid = InputHandler.ParseUint(dexterityInputBox.Text, out uint dexterityValue);
+            bool intelligenceValueValid = InputHandler.ParseUint(intelligenceInputBox.Text, out uint intelligenceValue);
+            bool wisdomValueValid = InputHandler.ParseUint(wisdomInputBox.Text, out uint wisdomValue);
+            bool charismaValueValid = InputHandler.ParseUint(charismaInputBox.Text, out uint charismaValue);
 
             List<uint> inputValues = new List<uint> {
                 strengthValue,
