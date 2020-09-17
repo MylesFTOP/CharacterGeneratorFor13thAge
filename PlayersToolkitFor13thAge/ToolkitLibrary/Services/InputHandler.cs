@@ -10,6 +10,12 @@ namespace ToolkitLibrary
     {
         public static bool ValidateValueAsInt(string stringInput, out int result) {
             bool output = int.TryParse(stringInput, out result);
+
+            if (result < 0)
+            {
+                result = 0;
+                output = false;
+            }
             return output;
         }
         

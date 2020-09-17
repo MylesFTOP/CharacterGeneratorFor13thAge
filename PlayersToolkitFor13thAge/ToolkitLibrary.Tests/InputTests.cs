@@ -11,6 +11,7 @@ namespace ToolkitLibrary.Tests
     {
         [Theory]
         [InlineData(false, "a")]
+        [InlineData(false, "-1")]
         [InlineData(true, "3")]
         public void InputHandler_ValidateValueAsIntShouldReturnBool(bool expectedValue, string input) {
             bool actualValue = InputHandler.ValidateValueAsInt(input, out int result);
