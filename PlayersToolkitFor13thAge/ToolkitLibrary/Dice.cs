@@ -6,51 +6,52 @@ namespace ToolkitLibrary
     {
         readonly Random _random;
 
-        public uint DiceRoll { get; private set; }
+        public int DiceRoll { get; private set; }
 
         public Dice(Random random) {
             _random = random;
         }
 
-        private uint RollDice(int minimumValue, int maximumValue) {
-            uint diceValue = (uint)_random.Next(minimumValue, maximumValue);
+        // TODO: remove minimumValue as all implementations call it as 1
+        private int RollDice(int minimumValue, int maximumValue) {
+            int diceValue = _random.Next(minimumValue, maximumValue);
             return diceValue;
         }
 
-        public uint RollAbilityStat() {
-            uint diceValue = RollD6();
+        public int RollAbilityStat() {
+            int diceValue = RollD6();
             if ( diceValue == 1 )
                { diceValue = RollD6(); }
             return diceValue;
         }
 
-        public uint RollD4() {
-            uint diceValue = RollDice(1, 4);
+        public int RollD4() {
+            int diceValue = RollDice(1, 4);
             return diceValue;
         }
 
-        public uint RollD6() {
-            uint diceValue = RollDice(1, 6);
+        public int RollD6() {
+            int diceValue = RollDice(1, 6);
             return diceValue;
         }
 
-        public uint RollD8() {
-            uint diceValue = RollDice(1, 8);
+        public int RollD8() {
+            int diceValue = RollDice(1, 8);
             return diceValue;
         }
 
-        public uint RollD10() {
-            uint diceValue = RollDice(1, 10);
+        public int RollD10() {
+            int diceValue = RollDice(1, 10);
             return diceValue;
         }
 
-        public uint RollD12() {
-            uint diceValue = RollDice(1, 12);
+        public int RollD12() {
+            int diceValue = RollDice(1, 12);
             return diceValue;
         }
 
-        public uint RollD20() {
-            uint diceValue = RollDice(1, 20);
+        public int RollD20() {
+            int diceValue = RollDice(1, 20);
             return diceValue;
         }
     }

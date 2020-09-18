@@ -8,8 +8,8 @@ namespace ToolkitLibrary.Tests
 
         [Fact]
         public void CharacterGenerator_ShouldGenerateAbilityStatBetween4And20() {
-            uint actualValue = generator.GenerateRandomAbilityStat();
-            Assert.InRange(actualValue, (uint)4, (uint)20);
+            int actualValue = generator.GenerateRandomAbilityStat();
+            Assert.InRange(actualValue, (int)4, (int)20);
         }
     }
 }

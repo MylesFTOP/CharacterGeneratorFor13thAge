@@ -8,12 +8,12 @@ namespace ToolkitLibrary
     {
         readonly Dice dice = Factory.CreateDice();
 
-        public uint GenerateRandomAbilityStat() {
+        public int GenerateRandomAbilityStat() {
             List<int> abilityStatRolls = new List<int>()
-                { (int)dice.RollAbilityStat(), (int)dice.RollAbilityStat() , (int)dice.RollAbilityStat() , (int)dice.RollAbilityStat() };
+                { dice.RollAbilityStat(), dice.RollAbilityStat() , dice.RollAbilityStat() , dice.RollAbilityStat() };
             abilityStatRolls.Sort();
             abilityStatRolls.RemoveAt(0);
-            uint randomAbilityStat = (uint)abilityStatRolls.Sum();
+            int randomAbilityStat = abilityStatRolls.Sum();
             return randomAbilityStat;
         }
     }
