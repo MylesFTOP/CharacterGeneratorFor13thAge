@@ -55,13 +55,13 @@ namespace ToolkitLibrary
             CurrentHitPoints = int.Parse(currentHitPoints);
         }
 
-        public uint CalculateHitPoints (uint constitution, uint characterLevel) { 
+        public int CalculateHitPoints (uint constitution, int characterLevel) { 
             AbilityStat a = new AbilityStat();
 
             // TODO: Add lookup for base value and multiplier for Hit Points
-            uint baseValue = 6; // default value for sorcerer - will need to look up against class
-            uint levelMultiplier = characterLevel + 2; // Only correct up to level 4 - will need to look up against class and level
-            uint hitPoints = (uint)(baseValue + a.CalculateModifier(constitution)) * levelMultiplier;
+            int baseValue = 6; // default value for sorcerer - will need to look up against class
+            int levelMultiplier = characterLevel + 2; // Only correct up to level 4 - will need to look up against class and level
+            int hitPoints = (baseValue + a.CalculateModifier(constitution)) * levelMultiplier;
             return hitPoints;
         }
     }

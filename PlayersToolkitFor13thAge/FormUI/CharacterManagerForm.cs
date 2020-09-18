@@ -134,7 +134,7 @@ namespace FormUI
             bool constitutionValueValid = InputHandler.ParseUint(constitutionInputBox.Text, out uint constitutionValue);
 
             hitPoints.Text = (characterLevelValid || constitutionValueValid) ?
-                model.CalculateHitPoints(constitutionValue, characterLevel).ToString() : defaultDisplayValue ;
+                model.CalculateHitPoints(constitutionValue, (int)characterLevel).ToString() : defaultDisplayValue ;
         }
 
         private bool ValidateInput() {

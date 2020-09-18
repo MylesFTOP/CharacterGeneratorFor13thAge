@@ -14,8 +14,8 @@ namespace ToolkitLibrary.Tests
         [Theory]
         [InlineData(45, 16, 3)]
         [InlineData(36, 16, 2)]
-        public void CharacterModel_HitPointsShouldCalculate(uint expectedValue, uint constitution, uint characterLevel) {
-            uint actualValue = characterModel.CalculateHitPoints(constitution, characterLevel);
+        public void CharacterModel_HitPointsShouldCalculate(int expectedValue, uint constitution, int characterLevel) {
+            int actualValue = characterModel.CalculateHitPoints(constitution, characterLevel);
             Assert.Equal(expectedValue, actualValue);
         }
     }
