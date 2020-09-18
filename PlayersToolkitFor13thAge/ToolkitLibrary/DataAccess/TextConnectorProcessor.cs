@@ -27,13 +27,14 @@ namespace ToolkitLibrary.DataAccess.TextHelpers
             {
                 string[] cols = line.Split(',');
 
+                // TODO: Pass named parameters in ctor, allow CharacterModel to handle how it wants (and to say when something's missing)
                 CharacterModel c = new CharacterModel();
                 c.CharacterID = int.Parse(cols[0]);
                 c.CharacterName = cols[1];
                 c.PlayerID = int.Parse(cols[2]);
                 c.CharacterRace = cols[3];
                 c.CharacterClass = cols[4];
-                c.CharacterLevel = uint.Parse(cols[5]);
+                c.CharacterLevel = int.Parse(cols[5]);
                 c.Strength = uint.Parse(cols[6]);
                 c.Constitution = uint.Parse(cols[7]);
                 c.Dexterity = uint.Parse(cols[8]);

@@ -11,7 +11,7 @@ namespace ToolkitLibrary
         public int PlayerID { get; set; }
         public string CharacterRace { get; set; }
         public string CharacterClass { get; set; }
-        public uint CharacterLevel { get; set; } 
+        public int CharacterLevel { get; set; } 
         public uint Strength { get; set; } 
         public uint Constitution { get; set; } 
         public uint Dexterity { get; set; }
@@ -44,7 +44,7 @@ namespace ToolkitLibrary
             CharacterName = characterName;
             CharacterClass = characterClass;
             CharacterRace = characterRace;
-            CharacterLevel = uint.Parse(characterLevel);
+            CharacterLevel = int.Parse(characterLevel);
 
             Strength = uint.Parse(strength);
             Constitution = uint.Parse(constitution);

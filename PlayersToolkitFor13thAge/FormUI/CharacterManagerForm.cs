@@ -86,7 +86,7 @@ namespace FormUI
 
             string displayFormat = "+0;-0";
             // TODO: Extract this duplicate code for input box parsing
-            bool characterLevelValid = InputHandler.ParseUint(characterLevelInputBox.Text, out uint characterLevel);
+            bool characterLevelValid = InputHandler.ParseNonNegativeInt(characterLevelInputBox.Text, out int characterLevel);
 
             if ( InputHandler.ParseUint(textBox.Text, out uint value) )
             {
@@ -110,7 +110,7 @@ namespace FormUI
 
         private void UpdateCombatStats() {
             // TODO: Extract this duplicate code for input box parsing
-            bool characterLevelValid = InputHandler.ParseUint(characterLevelInputBox.Text, out uint characterLevel);
+            bool characterLevelValid = InputHandler.ParseNonNegativeInt(characterLevelInputBox.Text, out int characterLevel);
 
             bool strengthValueValid = InputHandler.ParseUint(strengthInputBox.Text, out uint strengthValue);
             bool constitutionValueValid = InputHandler.ParseUint(constitutionInputBox.Text, out uint constitutionValue);
@@ -130,7 +130,7 @@ namespace FormUI
         }
 
         private void UpdateHitPoints() {
-            bool characterLevelValid = InputHandler.ParseUint(characterLevelInputBox.Text, out uint characterLevel);
+            bool characterLevelValid = InputHandler.ParseNonNegativeInt(characterLevelInputBox.Text, out int characterLevel);
             bool constitutionValueValid = InputHandler.ParseUint(constitutionInputBox.Text, out uint constitutionValue);
 
             hitPoints.Text = (characterLevelValid || constitutionValueValid) ?
