@@ -26,13 +26,5 @@ namespace ToolkitLibrary.Tests
             bool actualValue = InputHandler.ParseNonNegativeInt(input, out int result);
             Assert.Equal(expectedValue, actualValue);
         }
-
-        [Theory]
-        [InlineData(false, "a")]
-        [InlineData(true, "3")]
-        public void InputHandler_ParseUintShouldReturnBool(bool expectedValue, string input) {
-            bool actualValue = InputHandler.ParseUint(input, out uint result);
-            Assert.Equal(expectedValue, actualValue);
-        }
     }
 }
