@@ -12,9 +12,8 @@ namespace ToolkitLibrary
             _random = random;
         }
 
-        // TODO: remove minimumValue as all implementations call it as 1
-        private int RollDice(int minimumValue, int maximumValue) {
-            int diceValue = _random.Next(minimumValue, maximumValue);
+        private int RollDice(int maximumValue) {
+            int diceValue = _random.Next(1, maximumValue);
             return diceValue;
         }
 
@@ -26,32 +25,32 @@ namespace ToolkitLibrary
         }
 
         public int RollD4() {
-            int diceValue = RollDice(1, 4);
+            int diceValue = RollDice(4);
             return diceValue;
         }
 
         public int RollD6() {
-            int diceValue = RollDice(1, 6);
+            int diceValue = RollDice(6);
             return diceValue;
         }
 
         public int RollD8() {
-            int diceValue = RollDice(1, 8);
+            int diceValue = RollDice(8);
             return diceValue;
         }
 
         public int RollD10() {
-            int diceValue = RollDice(1, 10);
+            int diceValue = RollDice(10);
             return diceValue;
         }
 
         public int RollD12() {
-            int diceValue = RollDice(1, 12);
+            int diceValue = RollDice(12);
             return diceValue;
         }
 
         public int RollD20() {
-            int diceValue = RollDice(1, 20);
+            int diceValue = RollDice(20);
             return diceValue;
         }
     }
