@@ -23,10 +23,5 @@ namespace ToolkitLibrary
             }
             return output;
         }
-        
-        public static bool ParseUint(string stringInput, out uint result) {
-            bool output = uint.TryParse(stringInput, out result);
-            return output;
-        }
     }
 }
