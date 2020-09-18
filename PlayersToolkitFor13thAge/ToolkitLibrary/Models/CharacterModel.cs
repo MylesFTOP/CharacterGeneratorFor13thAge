@@ -12,12 +12,12 @@ namespace ToolkitLibrary
         public string CharacterRace { get; set; }
         public string CharacterClass { get; set; }
         public int CharacterLevel { get; set; } 
-        public uint Strength { get; set; } 
-        public uint Constitution { get; set; } 
-        public uint Dexterity { get; set; }
-        public uint Wisdom { get; set; }
-        public uint Intelligence { get; set; }
-        public uint Charisma { get; set; }
+        public int Strength { get; set; } 
+        public int Constitution { get; set; } 
+        public int Dexterity { get; set; }
+        public int Wisdom { get; set; }
+        public int Intelligence { get; set; }
+        public int Charisma { get; set; }
         public int CurrentHitPoints { get; set; }
         //public CombatStat ArmorClass { get; private set; } = new CombatStat();
         //public CombatStat PhysicalDefense { get; private set; } = new CombatStat();
@@ -46,16 +46,16 @@ namespace ToolkitLibrary
             CharacterRace = characterRace;
             CharacterLevel = int.Parse(characterLevel);
 
-            Strength = uint.Parse(strength);
-            Constitution = uint.Parse(constitution);
-            Dexterity = uint.Parse(dexterity);
-            Wisdom = uint.Parse(wisdom);
-            Intelligence = uint.Parse(intelligence);
-            Charisma = uint.Parse(charisma);
+            Strength = int.Parse(strength);
+            Constitution = int.Parse(constitution);
+            Dexterity = int.Parse(dexterity);
+            Wisdom = int.Parse(wisdom);
+            Intelligence = int.Parse(intelligence);
+            Charisma = int.Parse(charisma);
             CurrentHitPoints = int.Parse(currentHitPoints);
         }
 
-        public int CalculateHitPoints (uint constitution, int characterLevel) { 
+        public int CalculateHitPoints (int constitution, int characterLevel) { 
             AbilityStat a = new AbilityStat();
 
             // TODO: Add lookup for base value and multiplier for Hit Points

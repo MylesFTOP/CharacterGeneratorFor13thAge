@@ -9,7 +9,7 @@ namespace ToolkitLibrary.Tests
         [Theory]
         [InlineData(1, 13)]
         [InlineData(-1, 9)]
-        public void AbilityStat_ModifierShouldCalculate(int expectedValue, uint stat) {
+        public void AbilityStat_ModifierShouldCalculate(int expectedValue, int stat) {
             int actualValue = abilityStat.CalculateModifier(stat);
             Assert.Equal(expectedValue, actualValue);
         }
@@ -24,16 +24,16 @@ namespace ToolkitLibrary.Tests
         [Fact]
         public void AbilityStat_StringOverloadShouldReturnNumber() {
             AbilityStat abilityStatWithOverload = new AbilityStat("1");
-            uint expectedValue = 1;
-            uint actualValue = abilityStatWithOverload.AbilityStatValue;
+            int expectedValue = 1;
+            int actualValue = abilityStatWithOverload.AbilityStatValue;
             Assert.Equal(expectedValue, actualValue);
         }
 
         [Fact]
         public void AbilityStat_NumberOverloadShouldReturnNumber() {
             AbilityStat abilityStatWithOverload = new AbilityStat(1);
-            uint expectedValue = 1;
-            uint actualValue = abilityStatWithOverload.AbilityStatValue;
+            int expectedValue = 1;
+            int actualValue = abilityStatWithOverload.AbilityStatValue;
             Assert.Equal(expectedValue, actualValue);
         }
     }

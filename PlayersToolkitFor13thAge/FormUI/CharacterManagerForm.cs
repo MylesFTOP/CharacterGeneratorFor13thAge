@@ -88,7 +88,7 @@ namespace FormUI
             // TODO: Extract this duplicate code for input box parsing
             bool characterLevelValid = InputHandler.ParseNonNegativeInt(characterLevelInputBox.Text, out int characterLevel);
 
-            if ( InputHandler.ParseUint(textBox.Text, out uint value) )
+            if ( InputHandler.ParseNonNegativeInt(textBox.Text, out int value) )
             {
                 modifier.Text = abilityStat
                     .CalculateModifier(value)
@@ -112,12 +112,12 @@ namespace FormUI
             // TODO: Extract this duplicate code for input box parsing
             bool characterLevelValid = InputHandler.ParseNonNegativeInt(characterLevelInputBox.Text, out int characterLevel);
 
-            bool strengthValueValid = InputHandler.ParseUint(strengthInputBox.Text, out uint strengthValue);
-            bool constitutionValueValid = InputHandler.ParseUint(constitutionInputBox.Text, out uint constitutionValue);
-            bool dexterityValueValid = InputHandler.ParseUint(dexterityInputBox.Text, out uint dexterityValue);
-            bool intelligenceValueValid = InputHandler.ParseUint(intelligenceInputBox.Text, out uint intelligenceValue);
-            bool wisdomValueValid = InputHandler.ParseUint(wisdomInputBox.Text, out uint wisdomValue);
-            bool charismaValueValid = InputHandler.ParseUint(charismaInputBox.Text, out uint charismaValue);
+            bool strengthValueValid = InputHandler.ParseNonNegativeInt(strengthInputBox.Text, out int strengthValue);
+            bool constitutionValueValid = InputHandler.ParseNonNegativeInt(constitutionInputBox.Text, out int constitutionValue);
+            bool dexterityValueValid = InputHandler.ParseNonNegativeInt(dexterityInputBox.Text, out int dexterityValue);
+            bool intelligenceValueValid = InputHandler.ParseNonNegativeInt(intelligenceInputBox.Text, out int intelligenceValue);
+            bool wisdomValueValid = InputHandler.ParseNonNegativeInt(wisdomInputBox.Text, out int wisdomValue);
+            bool charismaValueValid = InputHandler.ParseNonNegativeInt(charismaInputBox.Text, out int charismaValue);
 
             armorClass.Text = ( constitutionValueValid || dexterityValueValid || wisdomValueValid || characterLevelValid ) ? 
                 combatStat.CalculateArmorClass(constitutionValue, dexterityValue, wisdomValue, characterLevel).ToString() : defaultDisplayValue ;
@@ -131,10 +131,10 @@ namespace FormUI
 
         private void UpdateHitPoints() {
             bool characterLevelValid = InputHandler.ParseNonNegativeInt(characterLevelInputBox.Text, out int characterLevel);
-            bool constitutionValueValid = InputHandler.ParseUint(constitutionInputBox.Text, out uint constitutionValue);
+            bool constitutionValueValid = InputHandler.ParseNonNegativeInt(constitutionInputBox.Text, out int constitutionValue);
 
             hitPoints.Text = (characterLevelValid || constitutionValueValid) ?
-                model.CalculateHitPoints(constitutionValue, (int)characterLevel).ToString() : defaultDisplayValue ;
+                model.CalculateHitPoints(constitutionValue, characterLevel).ToString() : defaultDisplayValue ;
         }
 
         private bool ValidateInput() {
@@ -150,7 +150,7 @@ namespace FormUI
             };
 
             List<TextBox> textBoxesParsable = textBoxes
-                .Where(x => InputHandler.ParseUint(x.Text, out uint parsedValue))
+                .Where(x => InputHandler.ParseNonNegativeInt(x.Text, out int parsedValue))
                 .ToList();
 
             if ( textBoxes.Count != textBoxesParsable.Count ) 
@@ -167,14 +167,14 @@ namespace FormUI
             }
 
             // TODO: Extract this duplicate code for input box parsing
-            bool strengthValueValid = InputHandler.ParseUint(strengthInputBox.Text, out uint strengthValue);
-            bool constitutionValueValid = InputHandler.ParseUint(constitutionInputBox.Text, out uint constitutionValue);
-            bool dexterityValueValid = InputHandler.ParseUint(dexterityInputBox.Text, out uint dexterityValue);
-            bool intelligenceValueValid = InputHandler.ParseUint(intelligenceInputBox.Text, out uint intelligenceValue);
-            bool wisdomValueValid = InputHandler.ParseUint(wisdomInputBox.Text, out uint wisdomValue);
-            bool charismaValueValid = InputHandler.ParseUint(charismaInputBox.Text, out uint charismaValue);
+            bool strengthValueValid = InputHandler.ParseNonNegativeInt(strengthInputBox.Text, out int strengthValue);
+            bool constitutionValueValid = InputHandler.ParseNonNegativeInt(constitutionInputBox.Text, out int constitutionValue);
+            bool dexterityValueValid = InputHandler.ParseNonNegativeInt(dexterityInputBox.Text, out int dexterityValue);
+            bool intelligenceValueValid = InputHandler.ParseNonNegativeInt(intelligenceInputBox.Text, out int intelligenceValue);
+            bool wisdomValueValid = InputHandler.ParseNonNegativeInt(wisdomInputBox.Text, out int wisdomValue);
+            bool charismaValueValid = InputHandler.ParseNonNegativeInt(charismaInputBox.Text, out int charismaValue);
 
-            List<uint> inputValues = new List<uint> {
+            List<int> inputValues = new List<int> {
                 strengthValue,
                 constitutionValue,
                 dexterityValue,

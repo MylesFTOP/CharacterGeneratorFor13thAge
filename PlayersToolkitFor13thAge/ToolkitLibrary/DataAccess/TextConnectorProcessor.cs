@@ -35,12 +35,12 @@ namespace ToolkitLibrary.DataAccess.TextHelpers
                 c.CharacterRace = cols[3];
                 c.CharacterClass = cols[4];
                 c.CharacterLevel = int.Parse(cols[5]);
-                c.Strength = uint.Parse(cols[6]);
-                c.Constitution = uint.Parse(cols[7]);
-                c.Dexterity = uint.Parse(cols[8]);
-                c.Wisdom = uint.Parse(cols[9]);
-                c.Intelligence = uint.Parse(cols[10]);
-                c.Charisma = uint.Parse(cols[11]);
+                c.Strength = int.Parse(cols[6]);
+                c.Constitution = int.Parse(cols[7]);
+                c.Dexterity = int.Parse(cols[8]);
+                c.Wisdom = int.Parse(cols[9]);
+                c.Intelligence = int.Parse(cols[10]);
+                c.Charisma = int.Parse(cols[11]);
                 c.CurrentHitPoints = int.Parse(cols[12]);
                 output.Add(c);
             }
