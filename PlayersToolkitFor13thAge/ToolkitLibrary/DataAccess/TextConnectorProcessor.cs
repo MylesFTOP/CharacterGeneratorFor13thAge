@@ -17,7 +17,8 @@ namespace ToolkitLibrary.DataAccess.TextHelpers
                 return new List<string>();
             }
 
-            return File.ReadAllLines(file).ToList();
+            return File.ReadAllLines(file)
+                .ToList();
         }
 
         public static List<CharacterModel> ConvertToCharacterModels(this List<string> lines) {

@@ -11,14 +11,20 @@ namespace ToolkitLibrary
         private const string CharactersFile = "CharacterModels.csv";
         public CharacterModel SaveCharacter(CharacterModel model) {
             // Load the text file and convert the text to a list<CharacterModel>
-            List<CharacterModel> characters = CharactersFile.FullFilePath().LoadFile().ConvertToCharacterModels();
+            List<CharacterModel> characters = CharactersFile
+                .FullFilePath()
+                .LoadFile()
+                .ConvertToCharacterModels();
 
             // Find max ID
             int currentId = 1;
 
             if ( characters.Count > 0 )
             {
-                currentId = characters.OrderByDescending(x => x.CharacterID).First().CharacterID + 1;
+                currentId = characters
+                    .OrderByDescending(x => x.CharacterID)
+                    .First()
+                    .CharacterID + 1;
             }
             model.CharacterID = currentId;
 
