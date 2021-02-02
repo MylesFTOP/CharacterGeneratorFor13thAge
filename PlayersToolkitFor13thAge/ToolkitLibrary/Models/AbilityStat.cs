@@ -4,7 +4,7 @@ namespace ToolkitLibrary
 {
     public class AbilityStat
     {
-        public int AbilityStatValue { get; set; }
+        public int AbilityStatValue { get; private set; }
 
         public int CalculateModifier(int abilityStat) {
             double modifier = Math.Floor(((double)abilityStat - 10) / 2);
