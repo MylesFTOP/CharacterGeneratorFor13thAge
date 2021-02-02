@@ -9,13 +9,13 @@ namespace ToolkitLibrary
         public static void InitialiseConnections(bool database, bool textfile) {
             if (database) {
                 // TODO: Add database connection details
-                SQLConnector sql = new SQLConnector();
+                SQLConnector sql = Factory.CreateSqlConnector();
                 Connections.Add(sql);
             }
 
             if (textfile) {
                 // TODO: Add textfile connection details
-                TextConnector text = new TextConnector();
+                TextConnector text = Factory.CreateTextConnector();
                 Connections.Add(text);
             }
         }

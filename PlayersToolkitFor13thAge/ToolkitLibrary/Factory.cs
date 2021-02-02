@@ -26,5 +26,13 @@ namespace ToolkitLibrary
         public static CombatStat CreateCombatStat() {
             return new CombatStat();
         }
+
+        public static SQLConnector CreateSqlConnector() {
+            return new SQLConnector();
+        }
+
+        public static TextConnector CreateTextConnector() {
+            return new TextConnector();
+        }
     }
 }
