@@ -12,8 +12,7 @@ namespace ToolkitLibrary
         }
 
         public int CalculateModifierWithLevel(int abilityStat, int characterLevel) {
-            int modifierWithLevel = CalculateModifier(abilityStat) + characterLevel;
-            return modifierWithLevel;
+            return CalculateModifier(abilityStat) + characterLevel;
         }
 
         public AbilityStat() {
