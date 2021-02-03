@@ -44,10 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CharacterGenerator.cs" />
+    <Compile Include="Services\CharacterGenerator.cs" />
     <Compile Include="DataAccess\TextConnectorProcessor.cs" />
-    <Compile Include="Dice.cs" />
-    <Compile Include="Factory.cs" />
+    <Compile Include="Services\Dice.cs" />
+    <Compile Include="Services\Factory.cs" />
     <Compile Include="Models\AbilityStat.cs" />
     <Compile Include="Models\CombatStat.cs" />
     <Compile Include="Models\CampaignModel.cs" />
