@@ -15,16 +15,24 @@ namespace ToolkitLibrary
             return new Random();
         }
 
-        public static CharacterModel CreateCharacterModel() {
-            return new CharacterModel();
-        }
-
         public static AbilityStat CreateAbilityStat() {
             return new AbilityStat();
         }
 
+        public static CampaignModel CreateCampaignModel() {
+            return new CampaignModel();
+        }
+
+        public static CharacterModel CreateCharacterModel() {
+            return new CharacterModel();
+        }
+
         public static CombatStat CreateCombatStat() {
             return new CombatStat();
+        }
+
+        public static UserModel CreateUserModel() {
+            return new UserModel();
         }
 
         public static SQLConnector CreateSqlConnector() {
