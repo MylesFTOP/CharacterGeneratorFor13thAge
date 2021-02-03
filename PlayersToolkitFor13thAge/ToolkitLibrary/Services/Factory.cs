@@ -42,5 +42,9 @@ namespace ToolkitLibrary
         public static TextConnector CreateTextConnector() {
             return new TextConnector();
         }
+
+        public static List<IDataConnection> CreateDataConnectionList() {
+            return new List<IDataConnection>();
+        }
     }
 }

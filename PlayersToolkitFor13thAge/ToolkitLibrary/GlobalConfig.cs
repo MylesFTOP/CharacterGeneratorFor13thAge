@@ -4,7 +4,7 @@ namespace ToolkitLibrary
 {
     public static class GlobalConfig
     {
-        public static List<IDataConnection> Connections { get; private set; } = new List<IDataConnection>();
+        public static List<IDataConnection> Connections { get; private set; } = Factory.CreateDataConnectionList();
 
         public static void InitialiseConnections(bool database, bool textfile) {
             if (database) {
