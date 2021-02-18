@@ -18,5 +18,11 @@ namespace ToolkitLibrary.Tests
             int actualValue = characterModel.CalculateHitPoints(constitution, characterLevel);
             Assert.Equal(expectedValue, actualValue);
         }
+
+        [Fact]
+        public void CharacterModel_Ctor_ShouldTakeStringsAsArguments() {
+            var actual = new CharacterModel("test name", "test class", "test race", "1", "12", "12", "12", "12", "12", "12", "21");
+            Assert.IsType<CharacterModel>(actual);
+        }
     }
 }
