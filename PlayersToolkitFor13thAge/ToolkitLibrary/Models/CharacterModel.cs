@@ -18,7 +18,7 @@ namespace ToolkitLibrary
         public int Wisdom { get; set; }
         public int Intelligence { get; set; }
         public int Charisma { get; set; }
-        public int CurrentHitPoints { get; set; }
+        public int CurrentHitPoints { get; private set; }
         //public CombatStat ArmorClass { get; private set; } = new CombatStat();
         //public CombatStat PhysicalDefense { get; private set; } = new CombatStat();
         //public CombatStat MentalDefense { get; private set; } = new CombatStat();
@@ -79,6 +79,10 @@ namespace ToolkitLibrary
 
         public void UpdateCharacterLevel(int newLevel) {
             CharacterLevel = newLevel;
+        }
+
+        public void UpdateCurrentHitPoints(int newHitPoints) {
+            CurrentHitPoints = newHitPoints;
         }
     }
 }

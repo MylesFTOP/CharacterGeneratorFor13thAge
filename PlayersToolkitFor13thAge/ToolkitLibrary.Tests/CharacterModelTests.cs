@@ -60,5 +60,14 @@ namespace ToolkitLibrary.Tests
             Assert.NotEqual(before, after);
 
         }
+
+        [Fact]
+        public void CharacterModel_UpdateCurrentHitPoints_ShouldChangeCurrentHitPoints() {
+            var before = characterModel.CurrentHitPoints;
+            characterModel.UpdateCurrentHitPoints(before - 1);
+            var after = characterModel.CurrentHitPoints;
+            Assert.NotEqual(before, after);
+
+        }
     }
 }
