@@ -7,11 +7,11 @@ namespace ToolkitLibrary
     public class CharacterModel
     {
         public int CharacterID { get; set; }
-        public string CharacterName { get; set; }
+        public string CharacterName { get; private set; }
         public int PlayerID { get; set; }
-        public string CharacterRace { get; set; }
-        public string CharacterClass { get; set; }
-        public int CharacterLevel { get; set; } 
+        public string CharacterRace { get; private set; }
+        public string CharacterClass { get; private set; }
+        public int CharacterLevel { get; private set; } 
         public int Strength { get; set; } 
         public int Constitution { get; set; } 
         public int Dexterity { get; set; }
@@ -63,6 +63,10 @@ namespace ToolkitLibrary
             int levelMultiplier = characterLevel + 2; // Only correct up to level 4 - will need to look up against class and level
             int hitPoints = (baseValue + a.CalculateModifier(constitution)) * levelMultiplier;
             return hitPoints;
+        }
+
+        public void UpdateCharacterName(string newName) {
+            CharacterName = newName;
         }
     }
 }
