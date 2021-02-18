@@ -18,39 +18,9 @@ namespace ToolkitLibrary
         }
 
         public int RollAbilityStat() {
-            int diceValue = RollD6();
-            if ( diceValue == 1 )
-               { diceValue = RollD6(); }
-            return diceValue;
-        }
-
-        public int RollD4() {
-            int diceValue = RollDice(4);
-            return diceValue;
-        }
-
-        public int RollD6() {
             int diceValue = RollDice(6);
-            return diceValue;
-        }
-
-        public int RollD8() {
-            int diceValue = RollDice(8);
-            return diceValue;
-        }
-
-        public int RollD10() {
-            int diceValue = RollDice(10);
-            return diceValue;
-        }
-
-        public int RollD12() {
-            int diceValue = RollDice(12);
-            return diceValue;
-        }
-
-        public int RollD20() {
-            int diceValue = RollDice(20);
+            if ( diceValue == 1 )
+               { diceValue = RollDice(6); }
             return diceValue;
         }
     }
