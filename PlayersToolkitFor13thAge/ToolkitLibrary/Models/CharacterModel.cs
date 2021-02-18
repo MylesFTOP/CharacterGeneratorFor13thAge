@@ -68,5 +68,17 @@ namespace ToolkitLibrary
         public void UpdateCharacterName(string newName) {
             CharacterName = newName;
         }
+
+        public void UpdateCharacterRace(string newRace) {
+            CharacterRace = newRace;
+        }
+
+        public void UpdateCharacterClass(string newClass) {
+            CharacterClass = newClass;
+        }
+
+        public void UpdateCharacterLevel(int newLevel) {
+            CharacterLevel = newLevel;
+        }
     }
 }

@@ -24,5 +24,14 @@ namespace ToolkitLibrary.Tests
             var actual = new CharacterModel("test name", "test class", "test race", "1", "12", "12", "12", "12", "12", "12", "21");
             Assert.IsType<CharacterModel>(actual);
         }
+
+        [Fact]
+        public void CharacterModel_UpdateCharacterName_ShouldChangeCharacterName() {
+            var before = "Name";
+            characterModel.UpdateCharacterName("");
+            var after = "Test " + before;
+            Assert.NotEqual(before, after);
+
+        }
     }
 }
