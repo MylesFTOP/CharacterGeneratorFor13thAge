@@ -56,7 +56,7 @@ namespace ToolkitLibrary
         }
 
         public int CalculateHitPoints (int constitution, int characterLevel) { 
-            AbilityStat a = new AbilityStat();
+            AbilityStat a = Factory.CreateAbilityStat();
 
             // TODO: Add lookup for base value and multiplier for Hit Points
             int baseValue = 6; // default value for sorcerer - will need to look up against class

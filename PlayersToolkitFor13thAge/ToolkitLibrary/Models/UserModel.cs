@@ -6,7 +6,7 @@ namespace ToolkitLibrary
 {
     public class UserModel
     {
-        public int UserID { get; set; }
+        public int UserID { get; private set; }
         public string Username { get; private set; }
         public string EmailAddress { get; private set; }
 
