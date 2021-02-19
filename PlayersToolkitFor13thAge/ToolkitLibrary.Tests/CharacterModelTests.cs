@@ -27,46 +27,46 @@ namespace ToolkitLibrary.Tests
 
         [Fact]
         public void CharacterModel_UpdateCharacterName_ShouldChangeCharacterName() {
-            var before = characterModel.CharacterName;
-            characterModel.UpdateCharacterName("Test " + before);
-            var after = characterModel.CharacterName;
-            Assert.NotEqual(before, after);
+            var previous = characterModel.CharacterName;
+            characterModel.UpdateCharacterName("Test " + previous);
+            var updated = characterModel.CharacterName;
+            Assert.NotEqual(previous, updated);
 
         }
 
         [Fact]
         public void CharacterModel_UpdateCharacterRace_ShouldChangeCharacterRace() {
-            var before = characterModel.CharacterRace;
-            characterModel.UpdateCharacterRace("Test " + before);
-            var after = characterModel.CharacterRace;
-            Assert.NotEqual(before, after);
+            var previous = characterModel.CharacterRace;
+            characterModel.UpdateCharacterRace("Test " + previous);
+            var updated = characterModel.CharacterRace;
+            Assert.NotEqual(previous, updated);
 
         }
 
         [Fact]
         public void CharacterModel_UpdateCharacterClass_ShouldChangeCharacterClass() {
-            var before = characterModel.CharacterClass;
-            characterModel.UpdateCharacterClass("Test " + before);
-            var after = characterModel.CharacterClass;
-            Assert.NotEqual(before, after);
+            var previous = characterModel.CharacterClass;
+            characterModel.UpdateCharacterClass("Test " + previous);
+            var updated = characterModel.CharacterClass;
+            Assert.NotEqual(previous, updated);
 
         }
 
         [Fact]
         public void CharacterModel_UpdateCharacterLevel_ShouldChangeCharacterLevel() {
-            var before = characterModel.CharacterLevel;
-            characterModel.UpdateCharacterLevel(before + 1);
-            var after = characterModel.CharacterLevel;
-            Assert.NotEqual(before, after);
+            var previous = characterModel.CharacterLevel;
+            characterModel.UpdateCharacterLevel(previous + 1);
+            var updated = characterModel.CharacterLevel;
+            Assert.NotEqual(previous, updated);
 
         }
 
         [Fact]
         public void CharacterModel_UpdateCurrentHitPoints_ShouldChangeCurrentHitPoints() {
-            var before = characterModel.CurrentHitPoints;
-            characterModel.UpdateCurrentHitPoints(before - 1);
-            var after = characterModel.CurrentHitPoints;
-            Assert.NotEqual(before, after);
+            var previous = characterModel.CurrentHitPoints;
+            characterModel.UpdateCurrentHitPoints(previous - 1);
+            var updated = characterModel.CurrentHitPoints;
+            Assert.NotEqual(previous, updated);
 
         }
     }
