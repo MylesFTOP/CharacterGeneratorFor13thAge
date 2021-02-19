@@ -29,6 +29,14 @@ namespace ToolkitLibrary.Tests
         }
 
         [Fact]
+        public void UserModel_UpdateUserId_ShouldUpdateUserId() {
+            var previous = user.UserId;
+            user.UpdateUserId(previous + 1);
+            var updated = user.UserId;
+            Assert.NotEqual(previous, updated);
+        }
+
+        [Fact]
         public void UserModel_UpdateUsername_ShouldUpdateUsername() {
             var previous = user.Username;
             user.UpdateUsername("New username");

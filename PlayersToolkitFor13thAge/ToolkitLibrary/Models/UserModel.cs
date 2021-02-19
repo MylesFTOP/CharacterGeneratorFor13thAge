@@ -6,9 +6,13 @@ namespace ToolkitLibrary
 {
     public class UserModel
     {
-        public int UserID { get; private set; }
+        public int UserId { get; private set; }
         public string Username { get; private set; }
         public string EmailAddress { get; private set; }
+
+        public void UpdateUserId(int newUserId) {
+            UserId = newUserId;
+        }
 
         public void UpdateUsername(string newUsername) {
             Username = newUsername;

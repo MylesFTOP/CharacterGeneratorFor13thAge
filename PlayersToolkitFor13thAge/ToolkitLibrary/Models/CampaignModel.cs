@@ -8,6 +8,7 @@ namespace ToolkitLibrary
     {
         public int CampaignID { get; set; }
         public string CampaignName { get; private set; }
+        // TODO: Remove coupling on properties
         public List<UserModel> Players { get; set; } = new List<UserModel>();
         public UserModel UserRunningCampaign { get; private set; } = new UserModel();
 
