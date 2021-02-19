@@ -13,6 +13,14 @@ namespace ToolkitLibrary.Tests
         private readonly UserModel user = Factory.CreateUserModel();
 
         [Fact]
+        public void CampaignModel_UpdateCampaignId_ShouldUpdateCampaignId() {
+            var previous = campaign.CampaignId;
+            campaign.UpdateCampaignId(previous + 1);
+            var updated = campaign.CampaignId;
+            Assert.NotEqual(previous, updated);
+        }
+
+        [Fact]
         public void CampaignModel_UpdateCampaignName_ShouldUpdateCampaignName() {
             var previous = campaign.CampaignName;
             campaign.UpdateCampaignName("New campaign name");
