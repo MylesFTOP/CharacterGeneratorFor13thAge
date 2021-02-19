@@ -22,11 +22,11 @@ namespace ToolkitLibrary
             if ( characters.Count > 0 )
             {
                 currentId = characters
-                    .OrderByDescending(x => x.CharacterID)
+                    .OrderByDescending(x => x.CharacterId)
                     .First()
-                    .CharacterID + 1;
+                    .CharacterId + 1;
             }
-            model.CharacterID = currentId;
+            model.CharacterId = currentId;
 
             // Add the new record with the new ID (max + 1)
             characters.Add(model);

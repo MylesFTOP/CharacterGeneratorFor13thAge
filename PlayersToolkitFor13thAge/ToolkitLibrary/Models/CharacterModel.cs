@@ -6,9 +6,9 @@ namespace ToolkitLibrary
 {
     public class CharacterModel
     {
-        public int CharacterID { get; set; }
+        public int CharacterId { get; set; }
         public string CharacterName { get; private set; }
-        public int PlayerID { get; set; }
+        public int PlayerId { get; set; }
         public string CharacterRace { get; private set; }
         public string CharacterClass { get; private set; }
         public int CharacterLevel { get; private set; } 
@@ -39,7 +39,7 @@ namespace ToolkitLibrary
         public CharacterModel(string characterName, string characterClass, string characterRace, string characterLevel,
             string strength, string constitution, string dexterity, string wisdom, string intelligence, string charisma, string currentHitPoints) {
             // TODO: Add logic for identifying users
-            PlayerID = 21;
+            PlayerId = 21;
 
             CharacterName = characterName;
             CharacterClass = characterClass;

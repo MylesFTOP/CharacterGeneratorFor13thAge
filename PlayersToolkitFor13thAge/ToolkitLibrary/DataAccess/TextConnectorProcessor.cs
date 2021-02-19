@@ -42,8 +42,8 @@ namespace ToolkitLibrary.DataAccess.TextHelpers
                     currentHitPoints : cols[12]
                 )
                 {
-                    CharacterID = int.Parse(cols[0]),
-                    PlayerID = int.Parse(cols[2])
+                    CharacterId = int.Parse(cols[0]),
+                    PlayerId = int.Parse(cols[2])
                 };
                 output.Add(c);
             }
@@ -55,7 +55,7 @@ namespace ToolkitLibrary.DataAccess.TextHelpers
 
             foreach ( CharacterModel c in models )
             {
-                lines.Add($"{c.CharacterID},{c.CharacterName},{c.PlayerID},{c.CharacterRace},{c.CharacterClass},{c.CharacterLevel},{c.Strength},{c.Constitution},{c.Dexterity},{c.Wisdom},{c.Intelligence},{c.Charisma},{c.CurrentHitPoints}");
+                lines.Add($"{c.CharacterId},{c.CharacterName},{c.PlayerId},{c.CharacterRace},{c.CharacterClass},{c.CharacterLevel},{c.Strength},{c.Constitution},{c.Dexterity},{c.Wisdom},{c.Intelligence},{c.Charisma},{c.CurrentHitPoints}");
             }
 
             File.WriteAllLines(fileName.FullFilePath(), lines);
