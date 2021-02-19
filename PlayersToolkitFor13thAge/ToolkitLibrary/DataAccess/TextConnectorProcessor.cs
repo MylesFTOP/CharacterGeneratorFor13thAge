@@ -12,8 +12,7 @@ namespace ToolkitLibrary.DataAccess.TextHelpers
         }
 
         public static List<string> LoadFile(this string file) {
-            if (!File.Exists(file))
-            {
+            if (!File.Exists(file)) {
                 return new List<string>();
             }
 
@@ -24,8 +23,7 @@ namespace ToolkitLibrary.DataAccess.TextHelpers
         public static List<CharacterModel> ConvertToCharacterModels(this List<string> lines) {
             List<CharacterModel> output = new List<CharacterModel>();
 
-            foreach ( string line in lines )
-            {
+            foreach ( string line in lines ) {
                 string[] cols = line.Split(',');
 
                 CharacterModel c = new CharacterModel(
@@ -53,9 +51,10 @@ namespace ToolkitLibrary.DataAccess.TextHelpers
         public static void SaveToCharactersFile(this List<CharacterModel> models, string fileName) {
             List<string> lines = new List<string>();
 
-            foreach ( CharacterModel c in models )
-            {
-                lines.Add($"{c.CharacterId},{c.CharacterName},{c.PlayerId},{c.CharacterRace},{c.CharacterClass},{c.CharacterLevel},{c.Strength},{c.Constitution},{c.Dexterity},{c.Wisdom},{c.Intelligence},{c.Charisma},{c.CurrentHitPoints}");
+            foreach ( CharacterModel c in models )             {
+                lines.Add(
+                    $"{c.CharacterId},{c.CharacterName},{c.PlayerId},{c.CharacterRace},{c.CharacterClass},{c.CharacterLevel},{c.Strength},{c.Constitution},{c.Dexterity},{c.Wisdom},{c.Intelligence},{c.Charisma},{c.CurrentHitPoints}"
+                    );
             }
 
             File.WriteAllLines(fileName.FullFilePath(), lines);
