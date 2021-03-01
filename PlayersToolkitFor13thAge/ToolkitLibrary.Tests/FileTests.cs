@@ -15,11 +15,10 @@ namespace ToolkitLibrary.Tests
         private readonly ContentType contentType = new ContentType();
 
         [Fact]
-        public void TextConnectorProcessor_FullFilePath_ShouldReturnValidPath() {
-            var expected = true;
+        public void TextConnectorProcessor_FullFilePath_ShouldIncludeFileName() {
+            var expected = "\\" + file;
             var actual = file
-                .FullFilePath()
-                .Contains($"C:\\");
+                .FullFilePath();
             Assert.Equal(expected, actual);
         }
     }
