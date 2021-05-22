@@ -9,8 +9,8 @@ namespace ToolkitLibrary
         public int CampaignId { get; private set; }
         public string CampaignName { get; private set; }
         // TODO: Remove coupling on properties
-        public List<UserModel> Players { get; set; } = new List<UserModel>();
-        public UserModel UserRunningCampaign { get; private set; } = new UserModel();
+        public List<UserModel> Players { get; set; } = Factory.CreateUserModelList();
+        public UserModel UserRunningCampaign { get; private set; } = Factory.CreateUserModel();
 
         public void UpdateCampaignId(int newCampaignId) {
             CampaignId = newCampaignId;

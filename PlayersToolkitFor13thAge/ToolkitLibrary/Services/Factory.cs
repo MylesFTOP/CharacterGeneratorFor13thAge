@@ -35,6 +35,10 @@ namespace ToolkitLibrary
             return new UserModel();
         }
 
+        public static List<UserModel> CreateUserModelList() {
+            return new List<UserModel>();
+        }
+
         public static SQLConnector CreateSqlConnector() {
             return new SQLConnector();
         }
