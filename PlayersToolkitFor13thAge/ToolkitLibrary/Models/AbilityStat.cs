@@ -2,7 +2,7 @@
 
 namespace ToolkitLibrary
 {
-    public class AbilityStat
+    public struct AbilityStat
     {
         public int AbilityStatValue { get; private set; }
 
@@ -13,10 +13,6 @@ namespace ToolkitLibrary
 
         public int CalculateModifierWithLevel(int abilityStat, int characterLevel) {
             return CalculateModifier(abilityStat) + characterLevel;
-        }
-
-        public AbilityStat() {
-
         }
 
         public AbilityStat(int inputValue) {
