@@ -31,7 +31,6 @@ namespace ToolkitLibrary.Tests
             characterModel.UpdateCharacterName("Test " + previous);
             var updated = characterModel.CharacterName;
             Assert.NotEqual(previous, updated);
-
         }
 
         [Fact]
@@ -40,7 +39,6 @@ namespace ToolkitLibrary.Tests
             characterModel.UpdateCharacterRace("Test " + previous);
             var updated = characterModel.CharacterRace;
             Assert.NotEqual(previous, updated);
-
         }
 
         [Fact]
@@ -49,7 +47,6 @@ namespace ToolkitLibrary.Tests
             characterModel.UpdateCharacterClass("Test " + previous);
             var updated = characterModel.CharacterClass;
             Assert.NotEqual(previous, updated);
-
         }
 
         [Fact]
@@ -58,7 +55,6 @@ namespace ToolkitLibrary.Tests
             characterModel.UpdateCharacterLevel(previous + 1);
             var updated = characterModel.CharacterLevel;
             Assert.NotEqual(previous, updated);
-
         }
 
         [Fact]
@@ -67,7 +63,6 @@ namespace ToolkitLibrary.Tests
             characterModel.UpdateCurrentHitPoints(previous - 1);
             var updated = characterModel.CurrentHitPoints;
             Assert.NotEqual(previous, updated);
-
         }
     }
 }
