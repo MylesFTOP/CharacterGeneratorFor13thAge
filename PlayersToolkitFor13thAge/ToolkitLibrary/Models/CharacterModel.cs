@@ -12,13 +12,12 @@ namespace ToolkitLibrary
         public string CharacterRace { get; private set; }
         public string CharacterClass { get; private set; }
         public int CharacterLevel { get; private set; }
-        public Dictionary<string, int> AbilityStats { get; private set; }
-        public int Strength { get; set; } 
-        public int Constitution { get; set; } 
-        public int Dexterity { get; set; }
-        public int Wisdom { get; set; }
-        public int Intelligence { get; set; }
-        public int Charisma { get; set; }
+        public int Strength { get; private set; } 
+        public int Constitution { get; private set; } 
+        public int Dexterity { get; private set; }
+        public int Wisdom { get; private set; }
+        public int Intelligence { get; private set; }
+        public int Charisma { get; private set; }
         public int CurrentHitPoints { get; private set; }
         //public CombatStat ArmorClass { get; private set; } = new CombatStat();
         //public CombatStat PhysicalDefense { get; private set; } = new CombatStat();
@@ -59,15 +58,6 @@ namespace ToolkitLibrary
             Wisdom = int.Parse(wisdom);
             Intelligence = int.Parse(intelligence);
             Charisma = int.Parse(charisma);
-
-            AbilityStats = new Dictionary<string, int> {
-                ["Strength"]     = int.Parse(strength),
-                ["Constitution"] = int.Parse(constitution),
-                ["Dexterity"]    = int.Parse(dexterity),
-                ["Wisdom"]       = int.Parse(wisdom),
-                ["Intelligence"] = int.Parse(intelligence),
-                ["Charisma"]     = int.Parse(charisma)
-            };
         }
 
         public int CalculateHitPoints (int constitution, int characterLevel) { 
