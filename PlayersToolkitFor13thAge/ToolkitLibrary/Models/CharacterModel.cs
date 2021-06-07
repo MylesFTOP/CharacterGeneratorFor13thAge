@@ -89,5 +89,9 @@ namespace ToolkitLibrary
         public void UpdateCurrentHitPoints(int newHitPoints) {
             CurrentHitPoints = newHitPoints;
         }
+
+        public void HealCharacter(int pointsToAdd) {
+            CurrentHitPoints += pointsToAdd;
+        }
     }
 }

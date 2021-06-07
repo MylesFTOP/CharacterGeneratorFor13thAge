@@ -64,5 +64,13 @@ namespace ToolkitLibrary.Tests
             var updated = characterModel.CurrentHitPoints;
             Assert.NotEqual(previous, updated);
         }
+
+        [Fact]
+        public void CharacterModel_HealCharacter_ShouldIncreaseHitPoints() {
+            var expected = characterModel.CurrentHitPoints + 15;
+            characterModel.HealCharacter(15);
+            var updated = characterModel.CurrentHitPoints;
+            Assert.Equal(expected, updated);
+        }
     }
 }
