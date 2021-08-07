@@ -8,7 +8,7 @@ namespace ToolkitLibrary.DataAccess.TextHelpers
     public static class TextConnectorProcessor
     {
         public static string FullFilePath(this string fileName) {
-            return $"{ ConfigurationManager.AppSettings["filePath"] }\\{ fileName }";
+            return $"{ GlobalConfig.GetSetting("filePath") }\\{ fileName }";
         }
 
         public static List<string> LoadFile(this string file) {

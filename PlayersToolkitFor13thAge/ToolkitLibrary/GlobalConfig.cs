@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
 
 namespace ToolkitLibrary
 {
@@ -18,6 +20,16 @@ namespace ToolkitLibrary
                 TextConnector text = Factory.CreateTextConnector();
                 Connections.Add(text);
             }
+        }
+
+        public static string GetSetting (string key) {
+            var value = Environment.GetEnvironmentVariable(key);
+
+            if (string.IsNullOrEmpty(value)) {
+                value = ConfigurationManager.AppSettings[key];
+            }
+
+            return value;
         }
     }
 }
