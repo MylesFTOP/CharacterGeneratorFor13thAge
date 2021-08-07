@@ -62,7 +62,6 @@
     <Compile Include="CharacterGeneratorTests.cs" />
     <Compile Include="CharacterModelTests.cs" />
     <Compile Include="CombatStatTests.cs" />
-    <Compile Include="FileTests.cs" />
     <Compile Include="InputTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextTests.cs" />

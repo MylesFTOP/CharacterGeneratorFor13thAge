@@ -14,12 +14,6 @@ namespace ToolkitLibrary
                 SQLConnector sql = Factory.CreateSqlConnector();
                 Connections.Add(sql);
             }
-
-            if (textfile) {
-                // TODO: Add textfile connection details
-                TextConnector text = Factory.CreateTextConnector();
-                Connections.Add(text);
-            }
         }
 
         public static string GetSetting (string key) {
